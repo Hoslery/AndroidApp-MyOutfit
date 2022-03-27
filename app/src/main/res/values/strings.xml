@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">MyOutfit</string>
+    <string name="search_logo">SearchLogo</string>
+    <string name="welcome_text">Hello there, Welcome back</string>
+    <string name="welcome_text_sign_up">Welcome</string>
+    <string name="sign_in">Sign in to continue</string>
+    <string name="sign_up">SignUp to start your new Journey</string>
+    <string name="hint_username">Username</string>
+    <string name="hint_password">Password</string>
+    <string name="forget_password">Forget Password?</string>
+    <string name="btn_sign_in">Sign in</string>
+    <string name="btn_sign_up">Sign up</string>
+    <string name="new_user">New User? Sign up</string>
+    <string name="have_acc">Already have an account? LogIn</string>
+    <string name="full_name">Full Name</string>
+    <string name="user_name">Username</string>
+    <string name="email">Email</string>
+</resources>

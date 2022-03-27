@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="preloaded_fonts" translatable="false">
+        <item>@font/antic</item>
+        <item>@font/bangers</item>
+        <item>@font/bungee</item>
+        <item>@font/bungee_inline</item>
+        <item>@font/finger_paint</item>
+        <item>@font/lobster</item>
+        <item>@font/modak</item>
+        <item>@font/noto_serif_bold_italic</item>
+        <item>@font/noto_serif_italic</item>
+        <item>@font/permanent_marker</item>
+        <item>@font/shojumaru</item>
+        <item>@font/unkempt_bold</item>
+    </array>
+</resources>
