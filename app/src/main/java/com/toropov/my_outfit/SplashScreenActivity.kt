@@ -1,5 +1,6 @@
 package com.toropov.my_outfit
 
+import android.annotation.SuppressLint
 import android.app.ActivityOptions
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -12,16 +13,21 @@ import android.view.animation.AnimationUtils
 import android.widget.ImageView
 import android.widget.TextView
 
+@SuppressLint("CustomSplashScreen")
 class SplashScreenActivity : AppCompatActivity() {
 
+    private lateinit var text: TextView
+    private  lateinit var logo: ImageView
+    private  lateinit var fromBottom: Animation
+    private lateinit var fromTop: Animation
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash_screen)
-        val text: TextView = findViewById<TextView>(R.id.app_name)
-        val logo: ImageView = findViewById<ImageView>(R.id.search_logo)
-        val fromBottom: Animation = AnimationUtils.loadAnimation(this,R.anim.frombottom)
-        val fromTop: Animation = AnimationUtils.loadAnimation(this,R.anim.fromtop)
+        text = findViewById<TextView>(R.id.app_name)
+        logo = findViewById<ImageView>(R.id.search_logo)
+        fromBottom = AnimationUtils.loadAnimation(this,R.anim.frombottom)
+        fromTop = AnimationUtils.loadAnimation(this,R.anim.fromtop)
         text.startAnimation(fromBottom)
         logo.startAnimation(fromTop)
         Handler().postDelayed({

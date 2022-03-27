@@ -114,6 +114,7 @@
         android:layout_marginTop="5dp"/>
 
     <Button
+        android:id="@+id/have_acc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/have_acc"

@@ -13,15 +13,22 @@ import android.widget.TextView
 import com.google.android.material.textfield.TextInputLayout
 
 class LoginActivity : AppCompatActivity() {
+
+    private lateinit var text: TextView
+    private lateinit var logo: ImageView
+    private lateinit var username: TextInputLayout
+    private lateinit var password: TextInputLayout
+    private lateinit var callSignUp: Button
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN)
         setContentView(R.layout.activity_login)
-        val text: TextView = findViewById<TextView>(R.id.welcome_text)
-        val logo: ImageView = findViewById<ImageView>(R.id.search_logo)
-        val username: TextInputLayout= findViewById<TextInputLayout>(R.id.username)
-        val password: TextInputLayout= findViewById<TextInputLayout>(R.id.password)
-        val callSignUp: Button = findViewById(R.id.signup_screen)
+        text = findViewById<TextView>(R.id.welcome_text)
+        logo = findViewById<ImageView>(R.id.search_logo)
+        username = findViewById<TextInputLayout>(R.id.username)
+        password = findViewById<TextInputLayout>(R.id.password)
+        callSignUp = findViewById(R.id.signup_screen)
 
         callSignUp.setOnClickListener {
             val intent = Intent(this, SignUpActivity::class.java)
