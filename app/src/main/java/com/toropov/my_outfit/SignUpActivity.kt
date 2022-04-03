@@ -140,7 +140,7 @@ class SignUpActivity : AppCompatActivity() {
 
     private fun registerUser() {
 
-        print(2)
+
         if(!validateName() or !validateUsername() or !validateEmail() or !validatePassword()){
             return
         }
@@ -151,8 +151,8 @@ class SignUpActivity : AppCompatActivity() {
         val password: String = regPassword.editText?.text.toString()
 
 
-        val helperClass = UserHelperClass(fullName,username,email,password)
-        reference.child(username).setValue(helperClass)
+        val user = UserHelperClass(fullName,username,email,password)
+        reference.child(username).setValue(user)
     }
 
 
