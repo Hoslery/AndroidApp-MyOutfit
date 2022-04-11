@@ -1,17 +1,23 @@
 package com.toropov.my_outfit
 
 import android.app.ActivityOptions
+import android.content.ContentValues.TAG
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.util.Pair
 import android.view.View
 import android.view.WindowManager
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import com.google.android.material.textfield.TextInputLayout
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.*
+import com.google.firebase.ktx.Firebase
 
 class LoginActivity : AppCompatActivity() {
 
@@ -21,6 +27,8 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var logPassword: TextInputLayout
     private lateinit var callSignUp: Button
     private lateinit var logBtn: Button
+
+    private lateinit var auth: FirebaseAuth
 
     //DataBase
     private lateinit var database: FirebaseDatabase
@@ -35,6 +43,8 @@ class LoginActivity : AppCompatActivity() {
         logUsername = findViewById<TextInputLayout>(R.id.username)
         logPassword = findViewById<TextInputLayout>(R.id.password)
         callSignUp = findViewById(R.id.signup_screen)
+
+        auth = Firebase.auth
 
         callSignUp.setOnClickListener {
             val intent = Intent(this, SignUpActivity::class.java)
@@ -110,33 +120,56 @@ class LoginActivity : AppCompatActivity() {
 
                     logUsername.error = null
                     logUsername.isErrorEnabled = false
+                    for(ds in dataSnapshot.children){
+                        val passwordFromDB: String? = ds.child("password").getValue(String::class.java)
+                        if(passwordFromDB.equals(userEnteredPassword)){
 
-                    val passwordFromDB: String? =
-                        dataSnapshot.child(userEnteredUsername).child("password").getValue(String::class.java)
-                    if(passwordFromDB.equals(userEnteredPassword)){
+                            logPassword.error = null
+                            logPassword.isErrorEnabled = false
 
-                        logPassword.error = null
-                        logPassword.isErrorEnabled = false
+                            val nameFromDB: String? =
+                                ds.child("fullName").getValue(String::class.java)
+                            val usernameFromDB: String? =
+                                ds.child("username").getValue(String::class.java)
+                            val emailFromDB: String? =
+                                ds.child("email").getValue(String::class.java)
 
-                        val nameFromDB: String? =
-                            dataSnapshot.child(userEnteredUsername).child("fullName").getValue(String::class.java)
-                        val usernameFromDB: String? =
-                            dataSnapshot.child(userEnteredUsername).child("username").getValue(String::class.java)
-                        val emailFromDB: String? =
-                            dataSnapshot.child(userEnteredUsername).child("email").getValue(String::class.java)
+                            val intent = Intent(applicationContext, UserProfileActivity::class.java)
 
-                        val intent = Intent(applicationContext, UserProfileActivity::class.java)
+                            intent.putExtra("name",nameFromDB)
+                            intent.putExtra("username",usernameFromDB)
+                            intent.putExtra("password",passwordFromDB)
+                            intent.putExtra("email",emailFromDB)
 
-                        intent.putExtra("name",nameFromDB)
-                        intent.putExtra("username",usernameFromDB)
-                        intent.putExtra("password",passwordFromDB)
-                        intent.putExtra("email",emailFromDB)
+                            if (emailFromDB != null && passwordFromDB!=null ) {
+                                auth.signInWithEmailAndPassword(emailFromDB, passwordFromDB)
+                                    .addOnCompleteListener(this@LoginActivity) { task ->
+                                        if (task.isSuccessful) {
+                                            if(auth.currentUser?.isEmailVerified == true){
+                                                // Sign in success, update UI with the signed-in user's information
+                                                Log.d(TAG, "signInWithEmail:success")
+                                                val user = auth.currentUser
+                                                Toast.makeText(this@LoginActivity, "User logged in successfully", Toast.LENGTH_SHORT).show()
+                                                startActivity(intent)
+                                            } else {
+                                                Toast.makeText(this@LoginActivity, "Please verify your email address", Toast.LENGTH_SHORT).show()
+                                            }
 
-                        startActivity(intent)
-                    } else {
-                        logPassword.error = "Wrong Password"
-                        logPassword.requestFocus()
+                                        } else {
+                                            // If sign in fails, display a message to the user.
+                                            Log.w(TAG, "signInWithEmail:failure", task.exception)
+                                            Toast.makeText(baseContext, "Authentication failed.", Toast.LENGTH_SHORT).show()
+                                        }
+                                    }
+                            }
+
+                        } else {
+                            logPassword.error = "Wrong Password"
+                            logPassword.requestFocus()
+                        }
                     }
+
+
                 } else {
                     logUsername.error = "No such User exist"
                     logUsername.requestFocus()
@@ -148,6 +181,42 @@ class LoginActivity : AppCompatActivity() {
             }
 
         })
+    }
+
+    public override fun onStart() {
+        super.onStart()
+        // Check if user is signed in (non-null) and update UI accordingly.
+        val currentUser = auth.currentUser
+        if(currentUser != null && currentUser.isEmailVerified){
+            val ref =  FirebaseDatabase.getInstance("https://myoutfit-6f5f1-default-rtdb.europe-west1.firebasedatabase.app/").getReference("users").child(FirebaseAuth.getInstance().currentUser!!.uid)
+            ref.addListenerForSingleValueEvent(object: ValueEventListener{
+                override fun onDataChange(dataSnapshot: DataSnapshot) {
+                    val passwordFromDB: String? =
+                        dataSnapshot.child("password").getValue(String::class.java)
+                    val nameFromDB: String? =
+                        dataSnapshot.child("fullName").getValue(String::class.java)
+                    val usernameFromDB: String? =
+                        dataSnapshot.child("username").getValue(String::class.java)
+                    val emailFromDB: String? =
+                        dataSnapshot.child("email").getValue(String::class.java)
+
+                    val intent = Intent(applicationContext, UserProfileActivity::class.java)
+
+                    intent.putExtra("name",nameFromDB)
+                    intent.putExtra("username",usernameFromDB)
+                    intent.putExtra("password",passwordFromDB)
+                    intent.putExtra("email",emailFromDB)
+
+                    startActivity(intent)
+                }
+
+                override fun onCancelled(error: DatabaseError) {
+                    TODO("Not yet implemented")
+                }
+
+            })
+
+        }
     }
 
 }

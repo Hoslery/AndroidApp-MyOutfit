@@ -1,17 +1,25 @@
 package com.toropov.my_outfit
 
 import android.app.ActivityOptions
+import android.content.ContentValues.TAG
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.util.Pair
 import android.view.View
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
+import com.google.android.gms.tasks.Task
 import com.google.android.material.textfield.TextInputLayout
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.ktx.Firebase
 
 
 class SignUpActivity : AppCompatActivity() {
@@ -24,6 +32,7 @@ class SignUpActivity : AppCompatActivity() {
     private lateinit var regPassword: TextInputLayout
     private lateinit var callLogin: Button
     private lateinit var regBtn: Button
+    private lateinit var auth: FirebaseAuth
 
     //DataBase
     private lateinit var database: FirebaseDatabase
@@ -39,6 +48,8 @@ class SignUpActivity : AppCompatActivity() {
         regFullName = findViewById<TextInputLayout>(R.id.name)
         regEmail = findViewById<TextInputLayout>(R.id.email)
         callLogin = findViewById(R.id.have_acc)
+
+        auth = Firebase.auth
 
         callLogin.setOnClickListener {
             val intent = Intent(this, LoginActivity::class.java)
@@ -151,8 +162,51 @@ class SignUpActivity : AppCompatActivity() {
         val password: String = regPassword.editText?.text.toString()
 
 
-        val user = UserHelperClass(fullName,username,email,password)
-        reference.child(username).setValue(user)
+
+        auth.createUserWithEmailAndPassword(email, password)
+            .addOnCompleteListener(this) { task ->
+                if (task.isSuccessful) {
+
+                    val user = UserHelperClass(fullName,username,email,password)
+                    reference.child(FirebaseAuth.getInstance().currentUser!!.uid).setValue(user).addOnCompleteListener(this){
+                        task1 ->
+                        run {
+                            if (task1.isSuccessful) {
+
+                                auth.currentUser?.sendEmailVerification()
+                                    ?.addOnCompleteListener(this){ task2->
+                                        run {
+                                            if(task2.isSuccessful){
+                                                // Sign in success, update UI with the signed-in user's information
+                                                Log.d(TAG, "createUserWithEmail:success")
+                                                Toast.makeText(this, "User registered successfully. Please verify your email address", Toast.LENGTH_SHORT).show()
+                                                val intent = Intent(this, LoginActivity::class.java)
+                                                startActivity(intent)
+                                            } else {
+                                                Log.w(TAG, "createUserWithEmail:failure", task.exception)
+                                                Toast.makeText(baseContext, "User failed to register", Toast.LENGTH_SHORT).show()
+                                            }
+                                        }
+                                    }
+
+                            } else {
+                                Log.w(TAG, "createUserWithEmail:failure", task.exception)
+                                Toast.makeText(baseContext, "User failed to register", Toast.LENGTH_SHORT).show()
+                            }
+                        }
+                    }
+
+
+
+                } else {
+
+                    // If sign in fails, display a message to the user.
+                    Log.w(TAG, "createUserWithEmail:failure", task.exception)
+                    Toast.makeText(baseContext, "User failed to register", Toast.LENGTH_SHORT).show()
+
+                }
+            }
+
     }
 
 
