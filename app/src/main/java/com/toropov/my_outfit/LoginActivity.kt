@@ -183,41 +183,7 @@ class LoginActivity : AppCompatActivity() {
         })
     }
 
-    public override fun onStart() {
-        super.onStart()
-        // Check if user is signed in (non-null) and update UI accordingly.
-        val currentUser = auth.currentUser
-        if(currentUser != null && currentUser.isEmailVerified){
-            val ref =  FirebaseDatabase.getInstance("https://myoutfit-6f5f1-default-rtdb.europe-west1.firebasedatabase.app/").getReference("users").child(FirebaseAuth.getInstance().currentUser!!.uid)
-            ref.addListenerForSingleValueEvent(object: ValueEventListener{
-                override fun onDataChange(dataSnapshot: DataSnapshot) {
-                    val passwordFromDB: String? =
-                        dataSnapshot.child("password").getValue(String::class.java)
-                    val nameFromDB: String? =
-                        dataSnapshot.child("fullName").getValue(String::class.java)
-                    val usernameFromDB: String? =
-                        dataSnapshot.child("username").getValue(String::class.java)
-                    val emailFromDB: String? =
-                        dataSnapshot.child("email").getValue(String::class.java)
 
-                    val intent = Intent(applicationContext, UserProfileActivity::class.java)
-
-                    intent.putExtra("name",nameFromDB)
-                    intent.putExtra("username",usernameFromDB)
-                    intent.putExtra("password",passwordFromDB)
-                    intent.putExtra("email",emailFromDB)
-
-                    startActivity(intent)
-                }
-
-                override fun onCancelled(error: DatabaseError) {
-                    TODO("Not yet implemented")
-                }
-
-            })
-
-        }
-    }
 
 }
 
