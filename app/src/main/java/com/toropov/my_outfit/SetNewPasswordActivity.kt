@@ -1,10 +1,13 @@
 package com.toropov.my_outfit
 
+import android.content.DialogInterface
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.Settings
 import android.widget.Button
 import android.widget.ImageView
+import androidx.appcompat.app.AlertDialog
 import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -48,7 +51,11 @@ class SetNewPasswordActivity : AppCompatActivity() {
 
     private fun updatePassword() {
         //Check Internet Connection
-
+        val checkInternet = CheckInternet()
+        if(!checkInternet.isConnected(this)){
+            showCustomDialog()
+            return
+        }
 
         //Validation
         if(!validatePassword() or !validateConfirmPassword()){
@@ -69,6 +76,18 @@ class SetNewPasswordActivity : AppCompatActivity() {
         val intent = Intent(applicationContext,ForgotPasswordSuccessMessageActivity::class.java)
         startActivity(intent)
         finish()
+    }
+
+    private fun showCustomDialog() {
+         val builder: AlertDialog.Builder = AlertDialog.Builder(this)
+         builder.setMessage("Please connect to the Internet to proceed further")
+             .setCancelable(false)
+             .setPositiveButton("Connect",DialogInterface.OnClickListener { _, _ ->
+                 startActivity(Intent(Settings.ACTION_WIFI_SETTINGS))
+             })
+             .setNegativeButton("Cancel", DialogInterface.OnClickListener { dialogInterface, i ->
+                 dialogInterface.dismiss()
+             })
     }
 
     private fun validatePassword(): Boolean{
