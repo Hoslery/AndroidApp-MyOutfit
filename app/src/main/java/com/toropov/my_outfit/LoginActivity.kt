@@ -27,6 +27,7 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var logPassword: TextInputLayout
     private lateinit var callSignUp: Button
     private lateinit var logBtn: Button
+    private lateinit var forgotPas: Button
 
     private lateinit var auth: FirebaseAuth
 
@@ -64,6 +65,13 @@ class LoginActivity : AppCompatActivity() {
 
         logBtn.setOnClickListener {
             loginUser()
+        }
+
+        forgotPas = findViewById(R.id.forgotPas_btn)
+
+        forgotPas.setOnClickListener{
+            val intent = Intent(this, ForgotPasswordActivity::class.java)
+            startActivity(intent)
         }
     }
 
