@@ -22,8 +22,8 @@
                 android:id="@+id/profile_img"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:src="@drawable/user"
-                android:layout_centerVertical="true"/>
+                android:layout_centerVertical="true"
+                android:src="@drawable/user" />
 
             <TextView
                 android:id="@+id/fullname_feild"

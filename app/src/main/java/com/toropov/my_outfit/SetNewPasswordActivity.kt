@@ -40,6 +40,7 @@ class SetNewPasswordActivity : AppCompatActivity() {
         updateBtn = findViewById(R.id.set_new_password_btn)
 
         back.setOnClickListener {
+            auth.signOut()
             val intent = Intent(this, ForgotPasswordActivity::class.java)
             startActivity(intent)
         }

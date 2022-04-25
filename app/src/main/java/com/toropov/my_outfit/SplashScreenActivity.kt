@@ -64,7 +64,7 @@ class SplashScreenActivity : AppCompatActivity() {
             logo.animate().translationY(1650F).setDuration(1000).startDelay = 5000
             lottieAnim.animate().translationY(1400F).setDuration(1000).startDelay = 5000
             Handler().postDelayed({
-                val intent = Intent(this, OnBoardingActivity::class.java)
+                val intent = Intent(this, DashBoardActivity::class.java)
                 startActivity(intent)
                 finish()
             }, 6110)
