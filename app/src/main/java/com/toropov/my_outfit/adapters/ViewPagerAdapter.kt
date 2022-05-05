@@ -1,9 +1,12 @@
-package com.toropov.my_outfit
+package com.toropov.my_outfit.adapters
 
 import androidx.annotation.NonNull
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
+import com.toropov.my_outfit.fragments.OnBoardingFragment_1
+import com.toropov.my_outfit.fragments.OnBoardingFragment_2
+import com.toropov.my_outfit.fragments.OnBoardingFragment_3
 
 class ViewPagerAdapter (fragment: FragmentManager) : FragmentPagerAdapter(fragment,BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
 

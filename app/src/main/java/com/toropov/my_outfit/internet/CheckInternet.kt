@@ -1,4 +1,4 @@
-package com.toropov.my_outfit
+package com.toropov.my_outfit.internet
 
 import android.content.Context
 import android.net.ConnectivityManager

@@ -1,4 +1,4 @@
-package com.toropov.my_outfit
+package com.toropov.my_outfit.helperClasses
 
 class UserHelperClass() {
     var fullName = ""

@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:background="@drawable/my_gradient"
     android:padding="10dp"
-    tools:context=".SignUpActivity">
+    tools:context=".activities.SignUpActivity">
 
     <ImageView
         android:id="@+id/search_logo"

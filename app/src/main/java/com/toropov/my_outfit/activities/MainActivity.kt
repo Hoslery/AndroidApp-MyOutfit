@@ -1,7 +1,8 @@
-package com.toropov.my_outfit
+package com.toropov.my_outfit.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.toropov.my_outfit.R
 
 class MainActivity : AppCompatActivity() {
 

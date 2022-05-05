@@ -1,4 +1,4 @@
-package com.toropov.my_outfit
+package com.toropov.my_outfit.activities
 
 import android.app.ActivityOptions
 import android.content.ContentValues.TAG
@@ -18,6 +18,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.*
 import com.google.firebase.ktx.Firebase
+import com.toropov.my_outfit.R
 
 class LoginActivity : AppCompatActivity() {
 
@@ -142,7 +143,7 @@ class LoginActivity : AppCompatActivity() {
                             val emailFromDB: String? =
                                 ds.child("email").getValue(String::class.java)
 
-                            val intent = Intent(applicationContext, UserProfileActivity::class.java)
+                            val intent = Intent(applicationContext, DashBoardActivity::class.java)
 
                             intent.putExtra("name",nameFromDB)
                             intent.putExtra("username",usernameFromDB)

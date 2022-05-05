@@ -13,32 +13,44 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyOutfit">
         <activity
-            android:name=".DashBoardActivity"
+            android:name=".JacketsActivity"
             android:exported="false" />
         <activity
-            android:name=".ForgotPasswordSuccessMessageActivity"
+            android:name=".DressesActivity"
             android:exported="false" />
         <activity
-            android:name=".SetNewPasswordActivity"
+            android:name=".TShirtsActivity"
             android:exported="false" />
         <activity
-            android:name=".ForgotPasswordActivity"
+            android:name=".activities.ItemsActivity"
             android:exported="false" />
         <activity
-            android:name=".OnBoardingActivity"
+            android:name=".activities.DashBoardActivity"
             android:exported="false" />
         <activity
-            android:name=".UserProfileActivity"
+            android:name=".activities.ForgotPasswordSuccessMessageActivity"
             android:exported="false" />
         <activity
-            android:name=".SignUpActivity"
+            android:name=".activities.SetNewPasswordActivity"
             android:exported="false" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".activities.ForgotPasswordActivity"
             android:exported="false" />
-        <activity android:name=".MainActivity" />
         <activity
-            android:name=".SplashScreenActivity"
+            android:name=".activities.OnBoardingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.UserProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.SignUpActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.LoginActivity"
+            android:exported="false" />
+        <activity android:name=".activities.MainActivity" />
+        <activity
+            android:name=".activities.SplashScreenActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

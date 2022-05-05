@@ -1,9 +1,11 @@
-package com.toropov.my_outfit
+package com.toropov.my_outfit.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
+import com.toropov.my_outfit.R
+import com.toropov.my_outfit.adapters.ViewPagerAdapter
 import id.indosw.liquidswipe_lib.LiquidPager
 
 class OnBoardingActivity : AppCompatActivity() {
@@ -16,7 +18,7 @@ class OnBoardingActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_on_boarding)
 
-        o_b_anim = AnimationUtils.loadAnimation(this,R.anim.o_b_anim)
+        o_b_anim = AnimationUtils.loadAnimation(this, R.anim.o_b_anim)
 
         pager = findViewById(R.id.pager)
 

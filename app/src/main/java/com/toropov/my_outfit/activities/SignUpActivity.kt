@@ -1,4 +1,4 @@
-package com.toropov.my_outfit
+package com.toropov.my_outfit.activities
 
 import android.app.ActivityOptions
 import android.content.ContentValues.TAG
@@ -12,14 +12,14 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
-import com.google.android.gms.tasks.Task
 import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.ktx.Firebase
+import com.toropov.my_outfit.R
+import com.toropov.my_outfit.helperClasses.UserHelperClass
 
 
 class SignUpActivity : AppCompatActivity() {

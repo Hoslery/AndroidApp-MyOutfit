@@ -1,4 +1,4 @@
-package com.toropov.my_outfit
+package com.toropov.my_outfit.activities
 
 import android.content.ContentValues
 import android.content.Intent
@@ -7,12 +7,12 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.ImageView
-import android.widget.Toast
 import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.*
 import com.google.firebase.ktx.Firebase
+import com.toropov.my_outfit.R
 
 class ForgotPasswordActivity : AppCompatActivity() {
 

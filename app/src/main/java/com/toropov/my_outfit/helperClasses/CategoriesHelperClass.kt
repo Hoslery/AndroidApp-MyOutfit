@@ -1,4 +1,4 @@
-package com.toropov.my_outfit
+package com.toropov.my_outfit.helperClasses
 
 import android.graphics.Color
 import android.graphics.drawable.GradientDrawable

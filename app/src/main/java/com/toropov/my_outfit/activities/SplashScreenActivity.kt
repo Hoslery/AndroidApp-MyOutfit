@@ -1,24 +1,14 @@
-package com.toropov.my_outfit
+package com.toropov.my_outfit.activities
 
 import android.annotation.SuppressLint
-import android.app.ActivityOptions
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
-import android.util.Pair
-import android.view.View
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentActivity
-import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentPagerAdapter
-import androidx.viewpager2.adapter.FragmentStateAdapter
-import androidx.viewpager2.widget.ViewPager2
-import id.indosw.liquidswipe_lib.LiquidPager
 import com.airbnb.lottie.LottieAnimationView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -27,6 +17,7 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.google.firebase.ktx.Firebase
+import com.toropov.my_outfit.R
 
 @SuppressLint("CustomSplashScreen")
 class SplashScreenActivity : AppCompatActivity() {
@@ -51,8 +42,8 @@ class SplashScreenActivity : AppCompatActivity() {
         auth = Firebase.auth
         val currentUser = auth.currentUser
 
-        fromBottom = AnimationUtils.loadAnimation(this,R.anim.frombottom)
-        fromTop = AnimationUtils.loadAnimation(this,R.anim.fromtop)
+        fromBottom = AnimationUtils.loadAnimation(this, R.anim.frombottom)
+        fromTop = AnimationUtils.loadAnimation(this, R.anim.fromtop)
 
 
         text.startAnimation(fromBottom)
@@ -64,7 +55,7 @@ class SplashScreenActivity : AppCompatActivity() {
             logo.animate().translationY(1650F).setDuration(1000).startDelay = 5000
             lottieAnim.animate().translationY(1400F).setDuration(1000).startDelay = 5000
             Handler().postDelayed({
-                val intent = Intent(this, DashBoardActivity::class.java)
+                val intent = Intent(this, OnBoardingActivity::class.java)
                 startActivity(intent)
                 finish()
             }, 6110)
@@ -114,7 +105,7 @@ class SplashScreenActivity : AppCompatActivity() {
                         dataSnapshot.child("email").getValue(String::class.java)
 
                     Handler().postDelayed({
-                        val intent = Intent(applicationContext, UserProfileActivity::class.java)
+                        val intent = Intent(applicationContext, DashBoardActivity::class.java)
 
                         intent.putExtra("name",nameFromDB)
                         intent.putExtra("username",usernameFromDB)

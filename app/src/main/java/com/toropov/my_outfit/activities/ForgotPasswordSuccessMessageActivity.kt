@@ -1,4 +1,4 @@
-package com.toropov.my_outfit
+package com.toropov.my_outfit.activities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -7,6 +7,7 @@ import android.widget.Button
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+import com.toropov.my_outfit.R
 
 class ForgotPasswordSuccessMessageActivity : AppCompatActivity() {
 
@@ -24,7 +25,7 @@ class ForgotPasswordSuccessMessageActivity : AppCompatActivity() {
 
         logBtn.setOnClickListener {
             auth.signOut()
-            val intent = Intent(this,LoginActivity::class.java)
+            val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
             finish()
         }

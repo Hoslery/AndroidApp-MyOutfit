@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DashBoardActivity"
+    tools:context=".activities.DashBoardActivity"
     android:orientation="vertical"
     android:background="@color/home_background">
 
@@ -20,11 +20,12 @@
             android:src="@drawable/menu" />
 
         <ImageView
+            android:id="@+id/profile"
             android:layout_width="35dp"
             android:layout_height="35dp"
-            android:src="@drawable/user"
             android:layout_alignParentRight="true"
-            android:layout_centerVertical="true" />
+            android:layout_centerVertical="true"
+            android:src="@drawable/user" />
 
 
     </RelativeLayout>
@@ -89,6 +90,7 @@
                 android:orientation="horizontal">
 
                 <LinearLayout
+                    android:id="@+id/tshirts"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
@@ -119,6 +121,7 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/dresses"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
@@ -149,6 +152,7 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/jackets"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
@@ -179,6 +183,7 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/shoes"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">

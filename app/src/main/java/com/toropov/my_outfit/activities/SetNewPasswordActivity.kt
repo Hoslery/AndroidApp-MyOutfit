@@ -1,4 +1,4 @@
-package com.toropov.my_outfit
+package com.toropov.my_outfit.activities
 
 import android.content.DialogInterface
 import android.content.Intent
@@ -14,6 +14,8 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.ktx.Firebase
+import com.toropov.my_outfit.R
+import com.toropov.my_outfit.internet.CheckInternet
 
 class SetNewPasswordActivity : AppCompatActivity() {
 
@@ -74,7 +76,7 @@ class SetNewPasswordActivity : AppCompatActivity() {
         reference.child(
             FirebaseAuth.getInstance().currentUser!!.uid).child("password").setValue(newPassword)
 
-        val intent = Intent(applicationContext,ForgotPasswordSuccessMessageActivity::class.java)
+        val intent = Intent(applicationContext, ForgotPasswordSuccessMessageActivity::class.java)
         startActivity(intent)
         finish()
     }
