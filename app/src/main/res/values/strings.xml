@@ -17,4 +17,14 @@
     <string name="email">Email</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="home">Home</string>
+    <string name="my_profile">My Profile</string>
+    <string name="clothes">Clothes</string>
+    <string name="t_shirts">T-Shirts</string>
+    <string name="dresses">Dresses</string>
+    <string name="jackets">Jackets</string>
+    <string name="shoes">Shoes</string>
+    <string name="favorites">Favorites</string>
+    <string name="about_us">About us</string>
+    <string name="rate_us">Rate us</string>
 </resources>

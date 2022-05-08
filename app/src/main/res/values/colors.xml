@@ -9,6 +9,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="pink">	#DB7093</color>
     <color name="magnolia">#f0fff0</color>
+    <color name="red">#FF0000</color>
 
     <!-- DashBoard Colors -->
     <color name="home_background">#f2f5f8</color>
@@ -18,4 +19,8 @@
     <color name="card2">#7adccf</color>
     <color name="card3">#f7c59f</color>
     <color name="card4">#b8d7f5</color>
+    <color name="card5">#219ebc</color>
+    <color name="card6">#d62828</color>
+    <color name="card7">#8338ec</color>
+    <color name="card8">#81b29a</color>
 </resources>

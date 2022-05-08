@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:title="@string/home"
+            android:icon="@drawable/home"/>
+        <item
+            android:id="@+id/nav_profile"
+            android:title="@string/my_profile"
+            android:icon="@drawable/profile_menu"/>
+    </group>
+
+    <item android:title="@string/clothes">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nav_tshirts"
+                    android:title="@string/t_shirts"/>
+                <item
+                    android:id="@+id/nav_dresses"
+                    android:title="@string/dresses"/>
+                <item
+                    android:id="@+id/nav_jackets"
+                    android:title="@string/jackets"/>
+                <item
+                    android:id="@+id/nav_shoes"
+                    android:title="@string/shoes"/>
+
+            </group>
+        </menu>
+    </item>
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_favorites"
+            android:title="@string/favorites"
+            android:icon="@drawable/heart" />
+        <item
+            android:id="@+id/nav_about"
+            android:title="@string/about_us"
+            android:icon="@drawable/about"/>
+
+    </group>
+
+    <group android:checkableBehavior="none">
+        <item
+            android:id="@+id/nav_rate"
+            android:title="@string/rate_us"
+            android:icon="@drawable/rate"/>
+
+    </group>
+
+
+
+</menu>

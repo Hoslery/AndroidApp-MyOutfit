@@ -13,13 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyOutfit">
         <activity
-            android:name=".JacketsActivity"
-            android:exported="false" />
-        <activity
-            android:name=".DressesActivity"
-            android:exported="false" />
-        <activity
-            android:name=".TShirtsActivity"
+            android:name=".activities.AllCategoriesActivity"
             android:exported="false" />
         <activity
             android:name=".activities.ItemsActivity"

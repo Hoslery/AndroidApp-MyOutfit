@@ -8,17 +8,24 @@
         <entry key="..\:/Users/topor/AndroidStudioProjects/MyOutfit/app/src/main/res/drawable/card_2.xml" value="0.173" />
         <entry key="..\:/Users/topor/AndroidStudioProjects/MyOutfit/app/src/main/res/drawable/card_3.xml" value="0.173" />
         <entry key="..\:/Users/topor/AndroidStudioProjects/MyOutfit/app/src/main/res/drawable/card_4.xml" value="0.173" />
+        <entry key="..\:/Users/topor/AndroidStudioProjects/MyOutfit/app/src/main/res/drawable/card_5.xml" value="0.224" />
+        <entry key="..\:/Users/topor/AndroidStudioProjects/MyOutfit/app/src/main/res/drawable/card_6.xml" value="0.224" />
+        <entry key="..\:/Users/topor/AndroidStudioProjects/MyOutfit/app/src/main/res/drawable/card_7.xml" value="0.224" />
+        <entry key="..\:/Users/topor/AndroidStudioProjects/MyOutfit/app/src/main/res/drawable/card_8.xml" value="0.224" />
+        <entry key="..\:/Users/topor/AndroidStudioProjects/MyOutfit/app/src/main/res/drawable/ic_baseline_favorite.xml" value="0.212" />
+        <entry key="..\:/Users/topor/AndroidStudioProjects/MyOutfit/app/src/main/res/drawable/ic_baseline_favorite_full.xml" value="0.212" />
         <entry key="..\:/Users/topor/AndroidStudioProjects/MyOutfit/app/src/main/res/drawable/ic_baseline_person.xml" value="0.173" />
         <entry key="..\:/Users/topor/AndroidStudioProjects/MyOutfit/app/src/main/res/drawable/ic_email.xml" value="0.155" />
         <entry key="..\:/Users/topor/AndroidStudioProjects/MyOutfit/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2" />
         <entry key="..\:/Users/topor/AndroidStudioProjects/MyOutfit/app/src/main/res/drawable/ic_person.xml" value="0.173" />
         <entry key="..\:/Users/topor/AndroidStudioProjects/MyOutfit/app/src/main/res/drawable/my_gradient.xml" value="0.266" />
+        <entry key="..\:/Users/topor/AndroidStudioProjects/MyOutfit/app/src/main/res/layout/activity_all_categories.xml" value="0.2" />
         <entry key="..\:/Users/topor/AndroidStudioProjects/MyOutfit/app/src/main/res/layout/activity_dash_board.xml" value="0.264" />
         <entry key="..\:/Users/topor/AndroidStudioProjects/MyOutfit/app/src/main/res/layout/activity_dresses.xml" value="0.16409791477787852" />
         <entry key="..\:/Users/topor/AndroidStudioProjects/MyOutfit/app/src/main/res/layout/activity_forget_password.xml" value="0.1672710788757933" />
         <entry key="..\:/Users/topor/AndroidStudioProjects/MyOutfit/app/src/main/res/layout/activity_forgot_password.xml" value="0.264" />
         <entry key="..\:/Users/topor/AndroidStudioProjects/MyOutfit/app/src/main/res/layout/activity_forgot_password_success_message.xml" value="0.264" />
-        <entry key="..\:/Users/topor/AndroidStudioProjects/MyOutfit/app/src/main/res/layout/activity_items.xml" value="0.1500453309156845" />
+        <entry key="..\:/Users/topor/AndroidStudioProjects/MyOutfit/app/src/main/res/layout/activity_items.xml" value="0.264" />
         <entry key="..\:/Users/topor/AndroidStudioProjects/MyOutfit/app/src/main/res/layout/activity_jackets.xml" value="0.16409791477787852" />
         <entry key="..\:/Users/topor/AndroidStudioProjects/MyOutfit/app/src/main/res/layout/activity_login.xml" value="0.264" />
         <entry key="..\:/Users/topor/AndroidStudioProjects/MyOutfit/app/src/main/res/layout/activity_main.xml" value="0.21603260869565216" />
@@ -38,7 +45,9 @@
         <entry key="..\:/Users/topor/AndroidStudioProjects/MyOutfit/app/src/main/res/layout/fragment_on_boarding_2.xml" value="0.264" />
         <entry key="..\:/Users/topor/AndroidStudioProjects/MyOutfit/app/src/main/res/layout/fragment_on_boarding_3.xml" value="0.264" />
         <entry key="..\:/Users/topor/AndroidStudioProjects/MyOutfit/app/src/main/res/layout/item_design.xml" value="0.4" />
+        <entry key="..\:/Users/topor/AndroidStudioProjects/MyOutfit/app/src/main/res/layout/menu_header.xml" value="0.264" />
         <entry key="..\:/Users/topor/AndroidStudioProjects/MyOutfit/app/src/main/res/layout/slides_layout.xml" value="0.264" />
+        <entry key="..\:/Users/topor/AndroidStudioProjects/MyOutfit/app/src/main/res/menu/main_menu.xml" value="0.264" />
       </map>
     </option>
   </component>

@@ -5,11 +5,17 @@ import android.graphics.drawable.GradientDrawable
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
-import android.widget.ImageView
-import android.widget.LinearLayout
+import android.view.Menu
+import android.view.MenuItem
+import android.view.SubMenu
+import android.view.View
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.GravityCompat
+import androidx.drawerlayout.widget.DrawerLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.navigation.NavigationView
 import com.toropov.my_outfit.R
 import com.toropov.my_outfit.adapters.CategoriesAdapter
 import com.toropov.my_outfit.adapters.FeaturedAdapter
@@ -17,21 +23,41 @@ import com.toropov.my_outfit.helperClasses.CategoriesHelperClass
 import com.toropov.my_outfit.helperClasses.FeaturedHelperClass
 
 
-class DashBoardActivity : AppCompatActivity(), FeaturedAdapter.OnItemClickListener, CategoriesAdapter.OnItemClickListener {
+class DashBoardActivity : AppCompatActivity(), FeaturedAdapter.OnItemClickListener, CategoriesAdapter.OnItemClickListener,
+    NavigationView.OnNavigationItemSelectedListener {
 
     private lateinit var featuredRecycler: RecyclerView
     private lateinit var categoriesRecycler: RecyclerView
+    private lateinit var viewAll: Button
     private lateinit var userProfile: ImageView
     private lateinit var tshirts: LinearLayout
     private lateinit var dresses: LinearLayout
     private lateinit var jackets: LinearLayout
     private lateinit var shoes: LinearLayout
+    private lateinit var contentView: LinearLayout
+
+
+    //Drawer Menu
+    private lateinit var drawerLayout: DrawerLayout
+    private lateinit var navigationView: NavigationView
+    private lateinit var menu: ImageView
+    private val END_SCALE: Float = 0.7f
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
+        //UserData
+        val intent: Intent = intent
+        val user_username: String? = intent.getStringExtra("username")
+        val user_fullName: String? = intent.getStringExtra("name")
+        val user_email: String? = intent.getStringExtra("email")
+        val user_password: String? = intent.getStringExtra("password")
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dash_board)
 
         userProfile = findViewById(R.id.profile)
+        viewAll = findViewById(R.id.view_all)
 
         featuredRecycler = findViewById(R.id.featured_recycler)
         categoriesRecycler = findViewById(R.id.categories_recycler)
@@ -41,16 +67,20 @@ class DashBoardActivity : AppCompatActivity(), FeaturedAdapter.OnItemClickListen
         jackets = findViewById(R.id.jackets)
         shoes = findViewById(R.id.shoes)
 
+        contentView = findViewById(R.id.content)
+
+        //Menu
+        drawerLayout = findViewById(R.id.drawer_layout)
+        navigationView = findViewById(R.id.navigation_view)
+        menu = findViewById(R.id.menu)
+
+        navigationDrawer()
+
         featuredRecycler()
 
         categoriesRecycler()
 
         userProfile.setOnClickListener {
-            val intent: Intent = intent
-            val user_username: String? = intent.getStringExtra("username")
-            val user_fullName: String? = intent.getStringExtra("name")
-            val user_email: String? = intent.getStringExtra("email")
-            val user_password: String? = intent.getStringExtra("password")
 
             val intent1 = Intent(applicationContext, UserProfileActivity::class.java)
 
@@ -62,29 +92,168 @@ class DashBoardActivity : AppCompatActivity(), FeaturedAdapter.OnItemClickListen
         }
 
         tshirts.setOnClickListener {
-            val intent = Intent(this, ItemsActivity::class.java)
-            intent.putExtra("appName","T-Shirts")
-            startActivity(intent)
+            val intent1 = Intent(this, ItemsActivity::class.java)
+            intent1.putExtra("appName","T-Shirts")
+            intent1.putExtra("name",user_fullName)
+            intent1.putExtra("username",user_username)
+            intent1.putExtra("password",user_password)
+            intent1.putExtra("email",user_email)
+            startActivity(intent1)
         }
 
         dresses.setOnClickListener {
-            val intent = Intent(this, ItemsActivity::class.java)
-            intent.putExtra("appName","Dresses")
-            startActivity(intent)
+            val intent1 = Intent(this, ItemsActivity::class.java)
+            intent1.putExtra("appName","Dresses")
+            intent1.putExtra("name",user_fullName)
+            intent1.putExtra("username",user_username)
+            intent1.putExtra("password",user_password)
+            intent1.putExtra("email",user_email)
+            startActivity(intent1)
         }
 
         jackets.setOnClickListener {
-            val intent = Intent(this, ItemsActivity::class.java)
-            intent.putExtra("appName","Jackets")
-            startActivity(intent)
+            val intent1 = Intent(this, ItemsActivity::class.java)
+            intent1.putExtra("appName","Jackets")
+            intent1.putExtra("name",user_fullName)
+            intent1.putExtra("username",user_username)
+            intent1.putExtra("password",user_password)
+            intent1.putExtra("email",user_email)
+            startActivity(intent1)
         }
 
         shoes.setOnClickListener {
-            val intent = Intent(this, ItemsActivity::class.java)
-            intent.putExtra("appName","Shoes")
-            startActivity(intent)
+            val intent1 = Intent(this, ItemsActivity::class.java)
+            intent1.putExtra("appName","Shoes")
+            intent1.putExtra("name",user_fullName)
+            intent1.putExtra("username",user_username)
+            intent1.putExtra("password",user_password)
+            intent1.putExtra("email",user_email)
+            startActivity(intent1)
         }
 
+        viewAll.setOnClickListener {
+            startActivity(Intent(this,AllCategoriesActivity::class.java))
+        }
+
+
+    }
+
+    //Navigation Drawer Functions
+    private fun navigationDrawer() {
+
+        //Navigation Drawer
+        navigationView.bringToFront()
+        navigationView.setNavigationItemSelectedListener(this)
+        navigationView.setCheckedItem(R.id.nav_home)
+
+        menu.setOnClickListener {
+            if(drawerLayout.isDrawerVisible(GravityCompat.START)){
+                drawerLayout.closeDrawer(GravityCompat.START)
+            } else{
+                drawerLayout.openDrawer(GravityCompat.START)
+            }
+        }
+
+        animateNavigationDrawer()
+    }
+    private fun animateNavigationDrawer() {
+
+        drawerLayout.setScrimColor(resources.getColor(R.color.white))
+        drawerLayout.addDrawerListener(object: DrawerLayout.SimpleDrawerListener(){
+            override fun onDrawerSlide(drawerView: View, slideOffset: Float) {
+                val diffScaledOffset: Float = slideOffset*(1 - END_SCALE)
+                val offsetScale = 1 - diffScaledOffset
+                contentView.scaleX = offsetScale
+                contentView.scaleY = offsetScale
+
+                val xOffset: Float = drawerView.width*slideOffset
+                val xOffsetDiff: Float = contentView.width *diffScaledOffset/2
+                val xTranslation: Float = xOffset - xOffsetDiff
+                contentView.translationX = xTranslation
+            }
+
+        })
+
+    }
+    override fun onBackPressed() {
+
+        if(drawerLayout.isDrawerVisible(GravityCompat.START)){
+            drawerLayout.closeDrawer(GravityCompat.START)
+        } else {
+            super.onBackPressed()
+        }
+    }
+    override fun onNavigationItemSelected(item: MenuItem): Boolean {
+
+        //UserData
+        val intent: Intent = intent
+        val user_username: String? = intent.getStringExtra("username")
+        val user_fullName: String? = intent.getStringExtra("name")
+        val user_email: String? = intent.getStringExtra("email")
+        val user_password: String? = intent.getStringExtra("password")
+
+        when (item.itemId) {
+            R.id.nav_home -> {
+
+            }
+            R.id.nav_profile -> {
+
+                val intent1 = Intent(applicationContext, UserProfileActivity::class.java)
+
+                intent1.putExtra("name",user_fullName)
+                intent1.putExtra("username",user_username)
+                intent1.putExtra("password",user_password)
+                intent1.putExtra("email",user_email)
+                startActivity(intent1)
+            }
+            R.id.nav_tshirts -> {
+                val intent1 = Intent(this, ItemsActivity::class.java)
+                intent1.putExtra("appName","T-Shirts")
+                intent1.putExtra("name",user_fullName)
+                intent1.putExtra("username",user_username)
+                intent1.putExtra("password",user_password)
+                intent1.putExtra("email",user_email)
+                startActivity(intent1)
+            }
+            R.id.nav_dresses -> {
+                val intent1 = Intent(this, ItemsActivity::class.java)
+                intent1.putExtra("appName","Dresses")
+                intent1.putExtra("name",user_fullName)
+                intent1.putExtra("username",user_username)
+                intent1.putExtra("password",user_password)
+                intent1.putExtra("email",user_email)
+                startActivity(intent1)
+            }
+            R.id.nav_jackets-> {
+                val intent1 = Intent(this, ItemsActivity::class.java)
+                intent1.putExtra("appName","Jackets")
+                intent1.putExtra("name",user_fullName)
+                intent1.putExtra("username",user_username)
+                intent1.putExtra("password",user_password)
+                intent1.putExtra("email",user_email)
+                startActivity(intent1)
+            }
+            R.id.nav_shoes -> {
+                val intent1 = Intent(this, ItemsActivity::class.java)
+                intent1.putExtra("appName","Shoes")
+                intent1.putExtra("name",user_fullName)
+                intent1.putExtra("username",user_username)
+                intent1.putExtra("password",user_password)
+                intent1.putExtra("email",user_email)
+                startActivity(intent1)
+            }
+            R.id.nav_favorites -> {
+
+            }
+            R.id.nav_about -> {
+
+            }
+            R.id.nav_rate -> {
+
+            }
+        }
+        drawerLayout.closeDrawer(GravityCompat.START)
+        return true
     }
 
     override fun onItemClicked(featuredHelperClass: FeaturedHelperClass) {
@@ -113,28 +282,20 @@ class DashBoardActivity : AppCompatActivity(), FeaturedAdapter.OnItemClickListen
     override fun onItemCategoriesClicked(categoriesHelperClass: CategoriesHelperClass) {
         Log.i("Category",categoriesHelperClass.title)
 
-        when(categoriesHelperClass.title){
-            "Shoes"->{
-                val intent = Intent(this, ItemsActivity::class.java)
-                intent.putExtra("appName","Shoes")
-                startActivity(intent)
-            }
-            "T-Shirts"->{
-                val intent = Intent(this, ItemsActivity::class.java)
-                intent.putExtra("appName","T-Shirts")
-                startActivity(intent)
-            }
-            "Dresses"->{
-                val intent = Intent(this, ItemsActivity::class.java)
-                intent.putExtra("appName","Dresses")
-                startActivity(intent)
-            }
-            "Jackets"->{
-                val intent = Intent(this, ItemsActivity::class.java)
-                intent.putExtra("appName","Jackets")
-                startActivity(intent)
-            }
-        }
+        //UserData
+        val intent: Intent = intent
+        val user_username: String? = intent.getStringExtra("username")
+        val user_fullName: String? = intent.getStringExtra("name")
+        val user_email: String? = intent.getStringExtra("email")
+        val user_password: String? = intent.getStringExtra("password")
+
+        val intent1 = Intent(this, ItemsActivity::class.java)
+        intent1.putExtra("appName", categoriesHelperClass.title)
+        intent1.putExtra("name",user_fullName)
+        intent1.putExtra("username",user_username)
+        intent1.putExtra("password",user_password)
+        intent1.putExtra("email",user_email)
+        startActivity(intent1)
     }
 
     private fun categoriesRecycler() {
@@ -185,4 +346,5 @@ class DashBoardActivity : AppCompatActivity(), FeaturedAdapter.OnItemClickListen
 
 
     }
+
 }

@@ -3,6 +3,7 @@ package com.toropov.my_outfit.adapters
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
@@ -14,6 +15,7 @@ class ItemAdapter(_items: List<ItemHelperClass>, val itemClickListener: OnItemCl
     private val items: List<ItemHelperClass> = _items
 
     class ItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val favBtn: ImageButton = itemView.findViewById<ImageButton>(R.id.fav)
         val image: ImageView = itemView.findViewById<ImageView>(R.id.item_photo)
         val itemShop: TextView = itemView.findViewById<TextView>(R.id.item_shop)
         val itemName: TextView = itemView.findViewById<TextView>(R.id.item_name)
@@ -33,6 +35,22 @@ class ItemAdapter(_items: List<ItemHelperClass>, val itemClickListener: OnItemCl
             itemView.setOnClickListener {
                 clickListener.onItemClicked(itemHelperClass)
             }
+
+            if(itemHelperClass.check){
+                favBtn.setImageResource(R.drawable.ic_baseline_favorite_full)
+            }else{
+                favBtn.setImageResource(R.drawable.ic_baseline_favorite)
+            }
+
+            favBtn.setOnClickListener {
+                itemHelperClass.check = !itemHelperClass.check
+                if(itemHelperClass.check){
+                    favBtn.setImageResource(R.drawable.ic_baseline_favorite_full)
+                }else{
+                    favBtn.setImageResource(R.drawable.ic_baseline_favorite)
+                }
+                clickListener.OnFavBtnClicked(itemHelperClass)
+            }
         }
     }
 
@@ -40,7 +58,6 @@ class ItemAdapter(_items: List<ItemHelperClass>, val itemClickListener: OnItemCl
         val itemHelperClass: ItemHelperClass = items[position]
 
         holder.bind(itemHelperClass,itemClickListener)
-
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
@@ -50,6 +67,7 @@ class ItemAdapter(_items: List<ItemHelperClass>, val itemClickListener: OnItemCl
 
     interface OnItemClickListener{
         fun onItemClicked(itemHelperClass: ItemHelperClass)
+        fun OnFavBtnClicked(itemHelperClass: ItemHelperClass)
     }
 
     override fun getItemCount(): Int {
