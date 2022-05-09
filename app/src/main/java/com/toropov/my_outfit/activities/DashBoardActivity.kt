@@ -132,7 +132,12 @@ class DashBoardActivity : AppCompatActivity(), FeaturedAdapter.OnItemClickListen
         }
 
         viewAll.setOnClickListener {
-            startActivity(Intent(this,AllCategoriesActivity::class.java))
+            val intent1 = Intent(this, AllCategoriesActivity::class.java)
+            intent1.putExtra("name",user_fullName)
+            intent1.putExtra("username",user_username)
+            intent1.putExtra("password",user_password)
+            intent1.putExtra("email",user_email)
+            startActivity(intent1)
         }
 
 
@@ -192,6 +197,12 @@ class DashBoardActivity : AppCompatActivity(), FeaturedAdapter.OnItemClickListen
         val user_email: String? = intent.getStringExtra("email")
         val user_password: String? = intent.getStringExtra("password")
 
+        val intent2 = Intent(this, ItemsActivity::class.java)
+        intent2.putExtra("name",user_fullName)
+        intent2.putExtra("username",user_username)
+        intent2.putExtra("password",user_password)
+        intent2.putExtra("email",user_email)
+
         when (item.itemId) {
             R.id.nav_home -> {
 
@@ -207,48 +218,41 @@ class DashBoardActivity : AppCompatActivity(), FeaturedAdapter.OnItemClickListen
                 startActivity(intent1)
             }
             R.id.nav_tshirts -> {
-                val intent1 = Intent(this, ItemsActivity::class.java)
-                intent1.putExtra("appName","T-Shirts")
-                intent1.putExtra("name",user_fullName)
-                intent1.putExtra("username",user_username)
-                intent1.putExtra("password",user_password)
-                intent1.putExtra("email",user_email)
-                startActivity(intent1)
+                intent2.putExtra("appName","T-Shirts")
+                startActivity(intent2)
             }
             R.id.nav_dresses -> {
-                val intent1 = Intent(this, ItemsActivity::class.java)
-                intent1.putExtra("appName","Dresses")
-                intent1.putExtra("name",user_fullName)
-                intent1.putExtra("username",user_username)
-                intent1.putExtra("password",user_password)
-                intent1.putExtra("email",user_email)
-                startActivity(intent1)
+                intent2.putExtra("appName","Dresses")
+                startActivity(intent2)
             }
             R.id.nav_jackets-> {
-                val intent1 = Intent(this, ItemsActivity::class.java)
-                intent1.putExtra("appName","Jackets")
-                intent1.putExtra("name",user_fullName)
-                intent1.putExtra("username",user_username)
-                intent1.putExtra("password",user_password)
-                intent1.putExtra("email",user_email)
-                startActivity(intent1)
+                intent2.putExtra("appName","Jackets")
+                startActivity(intent2)
             }
             R.id.nav_shoes -> {
-                val intent1 = Intent(this, ItemsActivity::class.java)
-                intent1.putExtra("appName","Shoes")
-                intent1.putExtra("name",user_fullName)
-                intent1.putExtra("username",user_username)
-                intent1.putExtra("password",user_password)
-                intent1.putExtra("email",user_email)
-                startActivity(intent1)
+                intent2.putExtra("appName","Shoes")
+                startActivity(intent2)
             }
-            R.id.nav_favorites -> {
-
+            R.id.nav_jeans -> {
+                intent2.putExtra("appName","Jeans")
+                startActivity(intent2)
+            }
+            R.id.nav_hoodies -> {
+                intent2.putExtra("appName","Hoodies")
+                startActivity(intent2)
+            }
+            R.id.nav_pants -> {
+                intent2.putExtra("appName","Pants")
+                startActivity(intent2)
+            }
+            R.id.nav_blazers -> {
+                intent2.putExtra("appName","Blazers")
+                startActivity(intent2)
+            }
+            R.id.nav_favourites -> {
+                startActivity(Intent(this,FavouritesActivity::class.java))
             }
             R.id.nav_about -> {
-
-            }
-            R.id.nav_rate -> {
 
             }
         }

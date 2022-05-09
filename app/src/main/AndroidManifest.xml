@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyOutfit">
         <activity
+            android:name=".activities.FavouritesActivity"
+            android:exported="false" />
+        <activity
             android:name=".activities.AllCategoriesActivity"
             android:exported="false" />
         <activity

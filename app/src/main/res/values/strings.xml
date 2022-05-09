@@ -24,7 +24,11 @@
     <string name="dresses">Dresses</string>
     <string name="jackets">Jackets</string>
     <string name="shoes">Shoes</string>
-    <string name="favorites">Favorites</string>
+    <string name="favourites">Favourites</string>
     <string name="about_us">About us</string>
     <string name="rate_us">Rate us</string>
+    <string name="jeans">Jeans</string>
+    <string name="hoodies">Hoodies</string>
+    <string name="pants">Pants</string>
+    <string name="blazers">Blazers</string>
 </resources>

@@ -109,7 +109,7 @@ class ItemsActivity : AppCompatActivity(), ItemAdapter.OnItemClickListener, Navi
 
         init()
 
-        itemsRecycler.adapter = adapter
+//        itemsRecycler.adapter = adapter
 
     }
 
@@ -180,6 +180,12 @@ class ItemsActivity : AppCompatActivity(), ItemAdapter.OnItemClickListener, Navi
         val user_email: String? = intent.getStringExtra("email")
         val user_password: String? = intent.getStringExtra("password")
 
+        val intent2 = Intent(this, ItemsActivity::class.java)
+        intent2.putExtra("name",user_fullName)
+        intent2.putExtra("username",user_username)
+        intent2.putExtra("password",user_password)
+        intent2.putExtra("email",user_email)
+
         when (item.itemId) {
             R.id.nav_home -> {
                 super.onBackPressed()
@@ -195,48 +201,41 @@ class ItemsActivity : AppCompatActivity(), ItemAdapter.OnItemClickListener, Navi
                 startActivity(intent1)
             }
             R.id.nav_tshirts -> {
-                val intent1 = Intent(this, ItemsActivity::class.java)
-                intent1.putExtra("appName","T-Shirts")
-                intent1.putExtra("name",user_fullName)
-                intent1.putExtra("username",user_username)
-                intent1.putExtra("password",user_password)
-                intent1.putExtra("email",user_email)
-                startActivity(intent1)
+                intent2.putExtra("appName","T-Shirts")
+                startActivity(intent2)
             }
             R.id.nav_dresses -> {
-                val intent1 = Intent(this, ItemsActivity::class.java)
-                intent1.putExtra("appName","Dresses")
-                intent1.putExtra("name",user_fullName)
-                intent1.putExtra("username",user_username)
-                intent1.putExtra("password",user_password)
-                intent1.putExtra("email",user_email)
-                startActivity(intent1)
+                intent2.putExtra("appName","Dresses")
+                startActivity(intent2)
             }
             R.id.nav_jackets-> {
-                val intent1 = Intent(this, ItemsActivity::class.java)
-                intent1.putExtra("appName","Jackets")
-                intent1.putExtra("name",user_fullName)
-                intent1.putExtra("username",user_username)
-                intent1.putExtra("password",user_password)
-                intent1.putExtra("email",user_email)
-                startActivity(intent1)
+                intent2.putExtra("appName","Jackets")
+                startActivity(intent2)
             }
             R.id.nav_shoes -> {
-                val intent1 = Intent(this, ItemsActivity::class.java)
-                intent1.putExtra("appName","Shoes")
-                intent1.putExtra("name",user_fullName)
-                intent1.putExtra("username",user_username)
-                intent1.putExtra("password",user_password)
-                intent1.putExtra("email",user_email)
-                startActivity(intent1)
+                intent2.putExtra("appName","Shoes")
+                startActivity(intent2)
             }
-            R.id.nav_favorites -> {
-
+            R.id.nav_jeans -> {
+                intent2.putExtra("appName","Jeans")
+                startActivity(intent2)
+            }
+            R.id.nav_hoodies -> {
+                intent2.putExtra("appName","Hoodies")
+                startActivity(intent2)
+            }
+            R.id.nav_pants -> {
+                intent2.putExtra("appName","Pants")
+                startActivity(intent2)
+            }
+            R.id.nav_blazers -> {
+                intent2.putExtra("appName","Blazers")
+                startActivity(intent2)
+            }
+            R.id.nav_favourites -> {
+                startActivity(Intent(this,FavouritesActivity::class.java))
             }
             R.id.nav_about -> {
-
-            }
-            R.id.nav_rate -> {
 
             }
         }
@@ -261,10 +260,10 @@ class ItemsActivity : AppCompatActivity(), ItemAdapter.OnItemClickListener, Navi
         zaraThread = Thread(runnable1)
         wildBerriesThread = Thread(runnable2)
         hmThread.start()
-        zaraThread.start()
-        wildBerriesThread.start()
         hmThread.join()
+        zaraThread.start()
         zaraThread.join()
+        wildBerriesThread.start()
         wildBerriesThread.join()
     }
 
@@ -316,16 +315,15 @@ class ItemsActivity : AppCompatActivity(), ItemAdapter.OnItemClickListener, Navi
             val imgUrlStr: String = imageContainer.select("img")[0].attr("abs:data-src")
             readData(object: FirebaseCallback{
                 override fun onCallback(check: Boolean, key: String?) {
-                    Log.d("CHeeeeeeck","$check, $key")
                     products.add(ItemHelperClass(key!!,check,imgUrlStr,"H&M",itemName,itemPrice,href))
                 }
 
             }, imgUrlStr, href)
             Log.d("MyLog","H&M: $itemName , $itemPrice , $href , $imgUrlStr")
         }
-//        runOnUiThread(Runnable() {
-//            itemsRecycler.adapter = adapter
-//        })
+        runOnUiThread(Runnable() {
+            itemsRecycler.adapter = adapter
+        })
 
     }
 
@@ -368,13 +366,15 @@ class ItemsActivity : AppCompatActivity(), ItemAdapter.OnItemClickListener, Navi
                     continue
                 readData(object: FirebaseCallback{
                     override fun onCallback(check: Boolean, key: String?) {
-                        Log.d("CHeeeeeeck","$check, $key")
                         products.add(ItemHelperClass(key!!,check,imgUrlStr,"Zara",itemName,itemPrice,href))
                     }
 
                 }, imgUrlStr, href)
                 Log.d("MyLog","Zara: $itemName , $itemPrice , $href , $imgUrlStr")
             }
+            runOnUiThread(Runnable() {
+                itemsRecycler.adapter = adapter
+            })
         } else {
             val productLists : Elements = doc.getElementsByClass("product-grid")
             val items: Elements
@@ -407,7 +407,6 @@ class ItemsActivity : AppCompatActivity(), ItemAdapter.OnItemClickListener, Navi
                         continue
                     readData(object: FirebaseCallback{
                         override fun onCallback(check: Boolean, key: String?) {
-                            Log.d("CHeeeeeeck","$check, $key")
                             products.add(ItemHelperClass(key!!,check,imgUrlStr,"Zara",itemName,itemPrice,href))
                         }
 
@@ -416,6 +415,9 @@ class ItemsActivity : AppCompatActivity(), ItemAdapter.OnItemClickListener, Navi
                     tmp++
                 }
             }
+            runOnUiThread(Runnable() {
+                itemsRecycler.adapter = adapter
+            })
         }
 
     }

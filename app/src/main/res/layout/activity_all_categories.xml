@@ -63,13 +63,14 @@
                     android:padding="25dp"/>
 
                 <Button
+                    android:id="@+id/expand_jeans"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Expand All"
+                    android:layout_alignParentBottom="true"
                     android:background="#00000000"
                     android:padding="20dp"
-                    android:textColor="@color/black"
-                    android:layout_alignParentBottom="true"/>
+                    android:text="Expand All"
+                    android:textColor="@color/black" />
 
             </RelativeLayout>
 
@@ -100,24 +101,27 @@
                     android:layout_height="match_parent"
                     android:src="@drawable/hoodie"
                     android:layout_marginStart="20dp"/>
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Hoodies"
-                    android:textSize="30sp"
-                    android:fontFamily="@font/bungee"
-                    android:textColor="@color/white"
                     android:layout_alignParentEnd="true"
-                    android:padding="25dp"/>
+                    android:fontFamily="@font/bungee"
+                    android:padding="15dp"
+                    android:text="Hoodies"
+                    android:textColor="@color/white"
+                    android:textSize="30sp" />
+
                 <Button
+                    android:id="@+id/expand_hoodies"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Expand All"
                     android:layout_alignParentEnd="true"
-                    android:textColor="@color/white"
+                    android:layout_alignParentBottom="true"
                     android:background="#00000000"
                     android:padding="20dp"
-                    android:layout_alignParentBottom="true"/>
+                    android:text="Expand All"
+                    android:textColor="@color/white" />
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
 
@@ -141,13 +145,14 @@
                     android:padding="25dp"/>
 
                 <Button
+                    android:id="@+id/expand_pants"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Expand All"
+                    android:layout_alignParentBottom="true"
                     android:background="#00000000"
                     android:padding="20dp"
-                    android:textColor="@color/black"
-                    android:layout_alignParentBottom="true"/>
+                    android:text="Expand All"
+                    android:textColor="@color/black" />
 
             </RelativeLayout>
 
@@ -178,16 +183,19 @@
                     android:layout_height="match_parent"
                     android:src="@drawable/blazer"
                     android:layout_marginStart="20dp"/>
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Blazers"
-                    android:textSize="30sp"
-                    android:fontFamily="@font/bungee"
-                    android:textColor="@color/white"
                     android:layout_alignParentEnd="true"
-                    android:padding="25dp"/>
+                    android:fontFamily="@font/bungee"
+                    android:padding="15dp"
+                    android:text="Blazers"
+                    android:textColor="@color/white"
+                    android:textSize="30sp" />
+
                 <Button
+                    android:id="@+id/expand_blazers"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Expand All"
@@ -219,13 +227,14 @@
                     android:padding="25dp"/>
 
                 <Button
+                    android:id="@+id/expand_tshirts"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Expand All"
+                    android:layout_alignParentBottom="true"
                     android:background="#00000000"
                     android:padding="20dp"
-                    android:textColor="@color/black"
-                    android:layout_alignParentBottom="true"/>
+                    android:text="Expand All"
+                    android:textColor="@color/black" />
 
             </RelativeLayout>
 
@@ -256,24 +265,27 @@
                     android:layout_height="match_parent"
                     android:src="@drawable/dress1"
                     android:layout_marginStart="20dp"/>
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Dresses"
-                    android:textSize="30sp"
-                    android:fontFamily="@font/bungee"
-                    android:textColor="@color/white"
                     android:layout_alignParentEnd="true"
-                    android:padding="25dp"/>
+                    android:fontFamily="@font/bungee"
+                    android:padding="15dp"
+                    android:text="Dresses"
+                    android:textColor="@color/white"
+                    android:textSize="30sp" />
+
                 <Button
+                    android:id="@+id/expand_dresses"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Expand All"
                     android:layout_alignParentEnd="true"
-                    android:textColor="@color/white"
+                    android:layout_alignParentBottom="true"
                     android:background="#00000000"
                     android:padding="20dp"
-                    android:layout_alignParentBottom="true"/>
+                    android:text="Expand All"
+                    android:textColor="@color/white" />
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
 
@@ -297,13 +309,14 @@
                     android:padding="25dp"/>
 
                 <Button
+                    android:id="@+id/expand_jackets"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Expand All"
+                    android:layout_alignParentBottom="true"
                     android:background="#00000000"
                     android:padding="20dp"
-                    android:textColor="@color/black"
-                    android:layout_alignParentBottom="true"/>
+                    android:text="Expand All"
+                    android:textColor="@color/black" />
 
             </RelativeLayout>
 
@@ -334,24 +347,27 @@
                     android:layout_height="match_parent"
                     android:src="@drawable/sneakers1"
                     android:layout_marginStart="20dp"/>
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Shoes"
-                    android:textSize="30sp"
-                    android:fontFamily="@font/bungee"
-                    android:textColor="@color/white"
                     android:layout_alignParentEnd="true"
-                    android:padding="25dp"/>
+                    android:fontFamily="@font/bungee"
+                    android:padding="15dp"
+                    android:text="Shoes"
+                    android:textColor="@color/white"
+                    android:textSize="30sp" />
+
                 <Button
+                    android:id="@+id/expand_shoes"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Expand All"
                     android:layout_alignParentEnd="true"
-                    android:textColor="@color/white"
+                    android:layout_alignParentBottom="true"
                     android:background="#00000000"
                     android:padding="20dp"
-                    android:layout_alignParentBottom="true"/>
+                    android:text="Expand All"
+                    android:textColor="@color/white" />
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
 

@@ -29,6 +29,18 @@
                 <item
                     android:id="@+id/nav_shoes"
                     android:title="@string/shoes"/>
+                <item
+                    android:id="@+id/nav_jeans"
+                    android:title="@string/jeans"/>
+                <item
+                    android:id="@+id/nav_hoodies"
+                    android:title="@string/hoodies"/>
+                <item
+                    android:id="@+id/nav_pants"
+                    android:title="@string/pants"/>
+                <item
+                    android:id="@+id/nav_blazers"
+                    android:title="@string/blazers"/>
 
             </group>
         </menu>
@@ -36,21 +48,13 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_favorites"
-            android:title="@string/favorites"
+            android:id="@+id/nav_favourites"
+            android:title="@string/favourites"
             android:icon="@drawable/heart" />
         <item
             android:id="@+id/nav_about"
             android:title="@string/about_us"
             android:icon="@drawable/about"/>
-
-    </group>
-
-    <group android:checkableBehavior="none">
-        <item
-            android:id="@+id/nav_rate"
-            android:title="@string/rate_us"
-            android:icon="@drawable/rate"/>
 
     </group>
 

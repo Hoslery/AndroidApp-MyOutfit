@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="300dp"
+    android:layout_height="170dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="40dp"
+    app:cardElevation="8dp"
+    android:layout_margin="12sp"
+    app:strokeWidth="1dp"
+    app:strokeColor="@color/black">
+
+    <RelativeLayout
+        android:id="@+id/category_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="15dp"
+        android:background="@color/white">
+
+
+        <ImageView
+            android:id="@+id/item_photo"
+            android:layout_width="150dp"
+            android:layout_height="200dp"
+            android:scaleType="fitStart"
+            android:src="@drawable/t_shirt" />
+
+        <TextView
+            android:id="@+id/item_shop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="0dp"
+            android:layout_toEndOf="@+id/item_photo"
+            android:text="Shop"
+            android:textAppearance="?attr/textAppearanceHeadline6"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/item_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/item_shop"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_toEndOf="@+id/item_photo"
+            android:text="Name"
+            android:textAppearance="?attr/textAppearanceHeadline3"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/item_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/item_name"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="25dp"
+            android:layout_toEndOf="@+id/item_photo"
+            android:text="Price"
+            android:textAppearance="?attr/textAppearanceHeadline3"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+
+
+    </RelativeLayout>
+
+</com.google.android.material.card.MaterialCardView>
