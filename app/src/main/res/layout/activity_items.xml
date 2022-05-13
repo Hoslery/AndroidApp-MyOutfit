@@ -49,6 +49,38 @@
 
         </RelativeLayout>
 
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="20dp">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/sortBtn"
+                android:layout_width="110dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="25dp"
+                android:background="@drawable/card_4"
+                android:padding="5dp"
+                android:text="Ascending Sort"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/sortDescBtn"
+                android:layout_toRightOf="@+id/sortBtn"
+                android:layout_marginStart="50dp"
+                android:text="Descending Sort"
+                android:layout_width="110dp"
+                android:layout_height="60dp"
+                android:background="@drawable/card_3"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:padding="5dp" />
+
+        </RelativeLayout>
+
+
         <ScrollView
             android:layout_height="match_parent"
             android:layout_width="match_parent">

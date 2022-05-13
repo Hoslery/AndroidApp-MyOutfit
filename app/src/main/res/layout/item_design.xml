@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="330dp"
-    android:layout_height="170dp"
+    android:layout_width="300dp"
+    android:layout_height="266dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardCornerRadius="40dp"
     app:cardElevation="8dp"
@@ -20,7 +20,7 @@
         <ImageView
             android:id="@+id/item_photo"
             android:layout_width="150dp"
-            android:layout_height="200dp"
+            android:layout_height="170dp"
             android:scaleType="fitStart"
             android:src="@drawable/t_shirt" />
 
@@ -67,6 +67,10 @@
             android:id="@+id/fav"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/item_price"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="24dp"
+            android:layout_toEndOf="@+id/item_photo"
             android:background="@android:color/transparent"
             android:padding="2dp"
             android:src="@drawable/ic_baseline_favorite" />

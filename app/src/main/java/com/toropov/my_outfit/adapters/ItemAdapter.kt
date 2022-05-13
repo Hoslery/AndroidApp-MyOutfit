@@ -1,5 +1,6 @@
 package com.toropov.my_outfit.adapters
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -30,7 +31,7 @@ class ItemAdapter(_items: List<ItemHelperClass>, val itemClickListener: OnItemCl
             }
             itemShop.text = itemHelperClass.itemShop
             itemName.text = itemHelperClass.itemName
-            itemPrice.text = itemHelperClass.itemPrice
+            itemPrice.text = "${itemHelperClass.itemPrice} $"
 
             itemView.setOnClickListener {
                 clickListener.onItemClicked(itemHelperClass)

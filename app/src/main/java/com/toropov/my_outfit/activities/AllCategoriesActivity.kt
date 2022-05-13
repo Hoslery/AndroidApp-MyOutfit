@@ -30,12 +30,14 @@ class AllCategoriesActivity : AppCompatActivity() {
         val user_fullName: String? = intent.getStringExtra("name")
         val user_email: String? = intent.getStringExtra("email")
         val user_password: String? = intent.getStringExtra("password")
+        var user_gender: String? = intent.getStringExtra("gender")
 
         val intent1 = Intent(this, ItemsActivity::class.java)
         intent1.putExtra("name",user_fullName)
         intent1.putExtra("username",user_username)
         intent1.putExtra("password",user_password)
         intent1.putExtra("email",user_email)
+        intent1.putExtra("gender", user_gender)
 
         backBtn = findViewById(R.id.back_pressed)
         jeansBtn = findViewById(R.id.expand_jeans)
@@ -54,41 +56,49 @@ class AllCategoriesActivity : AppCompatActivity() {
         jeansBtn.setOnClickListener {
             intent1.putExtra("appName","Jeans")
             startActivity(intent1)
+            finish()
         }
 
         hoodiesBtn.setOnClickListener {
             intent1.putExtra("appName","Hoodies")
             startActivity(intent1)
+            finish()
         }
 
         pantsBtn.setOnClickListener {
             intent1.putExtra("appName","Pants")
             startActivity(intent1)
+            finish()
         }
 
         blazersBtn.setOnClickListener {
             intent1.putExtra("appName","Blazers")
             startActivity(intent1)
+            finish()
         }
 
         tshirtsBtn.setOnClickListener {
             intent1.putExtra("appName","T-Shirts")
             startActivity(intent1)
+            finish()
         }
 
         dressesBtn.setOnClickListener {
             intent1.putExtra("appName","Dresses")
             startActivity(intent1)
+            finish()
         }
 
         jacketsBtn.setOnClickListener {
             intent1.putExtra("appName","Jackets")
             startActivity(intent1)
+            finish()
         }
 
         shoesBtn.setOnClickListener {
             intent1.putExtra("appName","Shoes")
             startActivity(intent1)
+            finish()
         }
 
     }

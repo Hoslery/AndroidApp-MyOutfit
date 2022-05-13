@@ -1,6 +1,7 @@
 package com.toropov.my_outfit.activities
 
 import android.content.Intent
+import android.content.SharedPreferences
 import android.graphics.drawable.GradientDrawable
 import android.net.Uri
 import android.os.Bundle
@@ -52,6 +53,13 @@ class DashBoardActivity : AppCompatActivity(), FeaturedAdapter.OnItemClickListen
         val user_fullName: String? = intent.getStringExtra("name")
         val user_email: String? = intent.getStringExtra("email")
         val user_password: String? = intent.getStringExtra("password")
+        var user_gender: String? = intent.getStringExtra("gender")
+
+        if(user_gender!= null)
+            saveIntoSharedPrefs("userGender", user_gender)
+
+        user_gender = update("userGender")
+
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dash_board)
@@ -88,7 +96,9 @@ class DashBoardActivity : AppCompatActivity(), FeaturedAdapter.OnItemClickListen
             intent1.putExtra("username",user_username)
             intent1.putExtra("password",user_password)
             intent1.putExtra("email",user_email)
+            intent1.putExtra("activity",1)
             startActivity(intent1)
+            finish()
         }
 
         tshirts.setOnClickListener {
@@ -98,6 +108,7 @@ class DashBoardActivity : AppCompatActivity(), FeaturedAdapter.OnItemClickListen
             intent1.putExtra("username",user_username)
             intent1.putExtra("password",user_password)
             intent1.putExtra("email",user_email)
+            intent1.putExtra("gender", user_gender)
             startActivity(intent1)
         }
 
@@ -108,6 +119,7 @@ class DashBoardActivity : AppCompatActivity(), FeaturedAdapter.OnItemClickListen
             intent1.putExtra("username",user_username)
             intent1.putExtra("password",user_password)
             intent1.putExtra("email",user_email)
+            intent1.putExtra("gender", user_gender)
             startActivity(intent1)
         }
 
@@ -118,6 +130,7 @@ class DashBoardActivity : AppCompatActivity(), FeaturedAdapter.OnItemClickListen
             intent1.putExtra("username",user_username)
             intent1.putExtra("password",user_password)
             intent1.putExtra("email",user_email)
+            intent1.putExtra("gender", user_gender)
             startActivity(intent1)
         }
 
@@ -128,6 +141,7 @@ class DashBoardActivity : AppCompatActivity(), FeaturedAdapter.OnItemClickListen
             intent1.putExtra("username",user_username)
             intent1.putExtra("password",user_password)
             intent1.putExtra("email",user_email)
+            intent1.putExtra("gender", user_gender)
             startActivity(intent1)
         }
 
@@ -137,6 +151,7 @@ class DashBoardActivity : AppCompatActivity(), FeaturedAdapter.OnItemClickListen
             intent1.putExtra("username",user_username)
             intent1.putExtra("password",user_password)
             intent1.putExtra("email",user_email)
+            intent1.putExtra("gender", user_gender)
             startActivity(intent1)
         }
 
@@ -196,12 +211,19 @@ class DashBoardActivity : AppCompatActivity(), FeaturedAdapter.OnItemClickListen
         val user_fullName: String? = intent.getStringExtra("name")
         val user_email: String? = intent.getStringExtra("email")
         val user_password: String? = intent.getStringExtra("password")
+        var user_gender: String? = intent.getStringExtra("gender")
+
+        if(user_gender!= null)
+            saveIntoSharedPrefs("userGender", user_gender)
+
+        user_gender = update("userGender")
 
         val intent2 = Intent(this, ItemsActivity::class.java)
         intent2.putExtra("name",user_fullName)
         intent2.putExtra("username",user_username)
         intent2.putExtra("password",user_password)
         intent2.putExtra("email",user_email)
+        intent2.putExtra("gender", user_gender)
 
         when (item.itemId) {
             R.id.nav_home -> {
@@ -215,7 +237,9 @@ class DashBoardActivity : AppCompatActivity(), FeaturedAdapter.OnItemClickListen
                 intent1.putExtra("username",user_username)
                 intent1.putExtra("password",user_password)
                 intent1.putExtra("email",user_email)
+                intent1.putExtra("activity",1)
                 startActivity(intent1)
+                finish()
             }
             R.id.nav_tshirts -> {
                 intent2.putExtra("appName","T-Shirts")
@@ -270,8 +294,8 @@ class DashBoardActivity : AppCompatActivity(), FeaturedAdapter.OnItemClickListen
                 val openLinkIntent = Intent(Intent.ACTION_VIEW, address)
                 startActivity(openLinkIntent)
             }
-            "WB"->{
-                val address: Uri = Uri.parse("https://www.wildberries.ru/")
+            "Farfetch"->{
+                val address: Uri = Uri.parse("https://www.farfetch.com/fi/shopping/men/items.aspx")
                 val openLinkIntent = Intent(Intent.ACTION_VIEW, address)
                 startActivity(openLinkIntent)
             }
@@ -292,6 +316,12 @@ class DashBoardActivity : AppCompatActivity(), FeaturedAdapter.OnItemClickListen
         val user_fullName: String? = intent.getStringExtra("name")
         val user_email: String? = intent.getStringExtra("email")
         val user_password: String? = intent.getStringExtra("password")
+        var user_gender: String? = intent.getStringExtra("gender")
+
+        if(user_gender!= null)
+            saveIntoSharedPrefs("userGender", user_gender)
+
+        user_gender = update("userGender")
 
         val intent1 = Intent(this, ItemsActivity::class.java)
         intent1.putExtra("appName", categoriesHelperClass.title)
@@ -299,6 +329,7 @@ class DashBoardActivity : AppCompatActivity(), FeaturedAdapter.OnItemClickListen
         intent1.putExtra("username",user_username)
         intent1.putExtra("password",user_password)
         intent1.putExtra("email",user_email)
+        intent1.putExtra("gender", user_gender)
         startActivity(intent1)
     }
 
@@ -343,12 +374,24 @@ class DashBoardActivity : AppCompatActivity(), FeaturedAdapter.OnItemClickListen
 
         featuredStores.add(FeaturedHelperClass(R.drawable.hm_logo, "HM", "Fashionable clothes at affordable prices"))
         featuredStores.add(FeaturedHelperClass(R.drawable.zara_logo, "Zara", "Youth and audacity"))
-        featuredStores.add(FeaturedHelperClass(R.drawable.wildberries_logo, "WB", "The rhythm of modern life"))
+        featuredStores.add(FeaturedHelperClass(R.drawable.farfetch_logo, "Farfetch", "The rhythm of modern life"))
 
         val adapter = FeaturedAdapter(featuredStores,this)
         featuredRecycler.adapter = adapter
 
 
+    }
+
+    private fun saveIntoSharedPrefs(key: String, value: String){
+        val sp: SharedPreferences = getSharedPreferences("saveGender", MODE_PRIVATE)
+        val edidtor: SharedPreferences.Editor = sp.edit()
+        edidtor.putString(key,value)
+        edidtor.apply()
+    }
+
+    private fun update(key: String): String{
+        val sp: SharedPreferences = getSharedPreferences("saveGender", MODE_PRIVATE)
+        return sp.getString(key,"M").toString()
     }
 
 }
