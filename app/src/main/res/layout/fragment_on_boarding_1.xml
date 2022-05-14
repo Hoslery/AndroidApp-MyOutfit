@@ -41,13 +41,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-light"
-        android:text="Skip"
+        android:text="@string/skip"
         android:textSize="14sp"
         android:textStyle="bold"
         android:background="#00000000"
         android:textColor="@color/black"
         app:layout_constraintHorizontal_bias="1"
-        android:layout_marginRight="10dp"
+        android:layout_marginEnd="10dp"
         app:layout_constraintBottom_toBottomOf="@+id/textView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView"
@@ -58,7 +58,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-light"
-        android:text="Easy"
+        android:text="@string/easy"
         android:textSize="33sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -72,7 +72,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-condensed"
-        android:text="Price Tracking"
+        android:text="@string/price_tracking"
         android:textColor="@color/black"
         android:textSize="41sp"
         android:textStyle="bold"
@@ -88,7 +88,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="5dp"
-        android:text="Track prices for the items you are interested in"
+        android:text="@string/track_prices_interested_in"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -108,7 +108,7 @@
         app:layout_constraintStart_toStartOf="@+id/textView4"
         app:layout_constraintTop_toBottomOf="@+id/textView4"
         app:layout_constraintHorizontal_bias="0"
-        android:layout_marginLeft="5dp"/>
+        android:layout_marginStart="5dp"/>
 
 
 

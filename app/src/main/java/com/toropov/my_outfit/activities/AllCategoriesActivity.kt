@@ -30,7 +30,7 @@ class AllCategoriesActivity : AppCompatActivity() {
         val user_fullName: String? = intent.getStringExtra("name")
         val user_email: String? = intent.getStringExtra("email")
         val user_password: String? = intent.getStringExtra("password")
-        var user_gender: String? = intent.getStringExtra("gender")
+        val user_gender: String? = intent.getStringExtra("gender")
 
         val intent1 = Intent(this, ItemsActivity::class.java)
         intent1.putExtra("name",user_fullName)

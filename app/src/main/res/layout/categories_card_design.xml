@@ -18,7 +18,7 @@
             android:id="@+id/category_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="T-Shirts"
+            android:text="@string/t_shirts"
             android:textSize="20sp"
             android:fontFamily="@font/bungee"
             android:textColor="@color/black" />
@@ -28,7 +28,7 @@
             android:layout_width="110dp"
             android:layout_height="110dp"
             android:src="@drawable/t_shirt"
-            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"/>
 
     </RelativeLayout>

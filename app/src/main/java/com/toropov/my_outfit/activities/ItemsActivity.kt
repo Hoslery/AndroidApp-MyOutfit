@@ -89,6 +89,7 @@ class ItemsActivity : AppCompatActivity(), ItemAdapter.OnItemClickListener, Navi
         val user_fullName: String? = intent.getStringExtra("name")
         val user_email: String? = intent.getStringExtra("email")
         val user_password: String? = intent.getStringExtra("password")
+
         appName = findViewById(R.id.app_name)
         appName.text = appNameIntent
 
@@ -306,7 +307,7 @@ class ItemsActivity : AppCompatActivity(), ItemAdapter.OnItemClickListener, Navi
                 startActivity(Intent(this,FavouritesActivity::class.java))
             }
             R.id.nav_about -> {
-
+                startActivity(Intent(this,AboutUsActivity::class.java))
             }
         }
         drawerLayout.closeDrawer(GravityCompat.START)

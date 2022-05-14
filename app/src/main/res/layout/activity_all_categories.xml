@@ -28,7 +28,7 @@
             <ImageView
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
                 android:layout_centerVertical="true"
                 android:padding="15dp"
                 android:src="@drawable/search1" />
@@ -37,7 +37,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Categories"
+            android:text="@string/categories"
             android:textSize="30sp"
             android:fontFamily="@font/bungee"
             android:textAllCaps="true"
@@ -56,7 +56,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Jeans"
+                    android:text="@string/jeans"
                     android:textSize="30sp"
                     android:fontFamily="@font/bungee"
                     android:textColor="@color/black"
@@ -69,7 +69,7 @@
                     android:layout_alignParentBottom="true"
                     android:background="#00000000"
                     android:padding="20dp"
-                    android:text="Expand All"
+                    android:text="@string/expand_all"
                     android:textColor="@color/black" />
 
             </RelativeLayout>
@@ -108,7 +108,7 @@
                     android:layout_alignParentEnd="true"
                     android:fontFamily="@font/bungee"
                     android:padding="15dp"
-                    android:text="Hoodies"
+                    android:text="@string/hoodies"
                     android:textColor="@color/white"
                     android:textSize="30sp" />
 
@@ -120,7 +120,7 @@
                     android:layout_alignParentBottom="true"
                     android:background="#00000000"
                     android:padding="20dp"
-                    android:text="Expand All"
+                    android:text="@string/expand_all"
                     android:textColor="@color/white" />
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
@@ -138,7 +138,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Pants"
+                    android:text="@string/pants"
                     android:textSize="30sp"
                     android:fontFamily="@font/bungee"
                     android:textColor="@color/black"
@@ -151,7 +151,7 @@
                     android:layout_alignParentBottom="true"
                     android:background="#00000000"
                     android:padding="20dp"
-                    android:text="Expand All"
+                    android:text="@string/expand_all"
                     android:textColor="@color/black" />
 
             </RelativeLayout>
@@ -190,7 +190,7 @@
                     android:layout_alignParentEnd="true"
                     android:fontFamily="@font/bungee"
                     android:padding="15dp"
-                    android:text="Blazers"
+                    android:text="@string/blazers"
                     android:textColor="@color/white"
                     android:textSize="30sp" />
 
@@ -198,7 +198,7 @@
                     android:id="@+id/expand_blazers"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Expand All"
+                    android:text="@string/expand_all"
                     android:layout_alignParentEnd="true"
                     android:textColor="@color/white"
                     android:background="#00000000"
@@ -220,7 +220,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="T-Shirts"
+                    android:text="@string/t_shirts"
                     android:textSize="30sp"
                     android:fontFamily="@font/bungee"
                     android:textColor="@color/black"
@@ -233,7 +233,7 @@
                     android:layout_alignParentBottom="true"
                     android:background="#00000000"
                     android:padding="20dp"
-                    android:text="Expand All"
+                    android:text="@string/expand_all"
                     android:textColor="@color/black" />
 
             </RelativeLayout>
@@ -272,7 +272,7 @@
                     android:layout_alignParentEnd="true"
                     android:fontFamily="@font/bungee"
                     android:padding="15dp"
-                    android:text="Dresses"
+                    android:text="@string/dresses"
                     android:textColor="@color/white"
                     android:textSize="30sp" />
 
@@ -284,7 +284,7 @@
                     android:layout_alignParentBottom="true"
                     android:background="#00000000"
                     android:padding="20dp"
-                    android:text="Expand All"
+                    android:text="@string/expand_all"
                     android:textColor="@color/white" />
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
@@ -302,7 +302,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Jackets"
+                    android:text="@string/jackets"
                     android:textSize="30sp"
                     android:fontFamily="@font/bungee"
                     android:textColor="@color/black"
@@ -315,7 +315,7 @@
                     android:layout_alignParentBottom="true"
                     android:background="#00000000"
                     android:padding="20dp"
-                    android:text="Expand All"
+                    android:text="@string/expand_all"
                     android:textColor="@color/black" />
 
             </RelativeLayout>
@@ -354,7 +354,7 @@
                     android:layout_alignParentEnd="true"
                     android:fontFamily="@font/bungee"
                     android:padding="15dp"
-                    android:text="Shoes"
+                    android:text="@string/shoes"
                     android:textColor="@color/white"
                     android:textSize="30sp" />
 
@@ -366,7 +366,7 @@
                     android:layout_alignParentBottom="true"
                     android:background="#00000000"
                     android:padding="20dp"
-                    android:text="Expand All"
+                    android:text="@string/expand_all"
                     android:textColor="@color/white" />
             </RelativeLayout>
         </androidx.cardview.widget.CardView>

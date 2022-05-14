@@ -9,7 +9,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
 
         <RelativeLayout
@@ -40,7 +40,7 @@
                 android:layout_toEndOf="@id/profile_img"
                 android:fontFamily="@font/bungee"
                 android:includeFontPadding="false"
-                android:text="Egor Toropov"
+                android:text="@string/user_fullName"
                 android:textColor="@color/black"
                 android:textSize="21sp" />
 
@@ -52,7 +52,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_toEndOf="@id/profile_img"
                 android:includeFontPadding="false"
-                android:text="egor4"
+                android:text="@string/user_username"
                 android:textSize="19sp" />
         </RelativeLayout>
 
@@ -89,7 +89,7 @@
                         android:layout_centerInParent="true"
                         android:fontFamily="@font/bungee"
                         android:includeFontPadding="false"
-                        android:text="Favourites"
+                        android:text="@string/favourites"
                         android:textSize="20sp" />
 
                     <TextView
@@ -134,7 +134,7 @@
                         android:layout_centerInParent="true"
                         android:fontFamily="@font/bungee"
                         android:includeFontPadding="false"
-                        android:text="Gender"
+                        android:text="@string/gender"
                         android:textSize="20sp" />
 
 
@@ -150,8 +150,8 @@
                             android:id="@+id/radio_men"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:drawableLeft="@drawable/men"
-                            android:layout_marginLeft="0dp"
+                            android:drawableStart="@drawable/men"
+                            android:layout_marginStart="0dp"
                             android:buttonTint="@color/black"
                             android:layout_weight="1" />
 
@@ -159,10 +159,10 @@
                             android:id="@+id/radio_woman"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginLeft="8dp"
+                            android:layout_marginStart="8dp"
                             android:buttonTint="@color/black"
                             android:layout_weight="1"
-                            android:drawableRight="@drawable/woman" />
+                            android:drawableEnd="@drawable/woman" />
                     </RadioGroup>
 
 
@@ -187,7 +187,7 @@
                     android:id="@+id/email"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Email: "
+                    android:text="@string/email_profile"
                     android:fontFamily="@font/bungee"
                     android:textSize="21sp" />
 
@@ -195,8 +195,8 @@
                     android:id="@+id/email_profile"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="toporik_75@mail.ru"
-                    android:layout_toRightOf="@+id/email"
+                    android:text="@string/user_email"
+                    android:layout_toEndOf="@+id/email"
                     android:layout_marginStart="10dp"
                     android:layout_centerVertical="true"
                     android:textColor="@color/black"
@@ -212,7 +212,7 @@
                     android:id="@+id/pas"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Password: "
+                    android:text="@string/password_profile"
                     android:fontFamily="@font/bungee"
                     android:textSize="21sp" />
 
@@ -220,8 +220,8 @@
                     android:id="@+id/password_profile"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Ab123#"
-                    android:layout_toRightOf="@+id/pas"
+                    android:text="@string/user_password"
+                    android:layout_toEndOf="@+id/pas"
                     android:layout_marginStart="10dp"
                     android:layout_centerVertical="true"
                     android:textColor="@color/black"
@@ -233,7 +233,7 @@
                 android:id="@+id/exit_btn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Exit"
+                android:text="@string/exit"
                 android:fontFamily="@font/bungee"
                 android:textColor="@color/pink"
                 android:background="#0000"

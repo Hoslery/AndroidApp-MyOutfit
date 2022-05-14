@@ -42,7 +42,7 @@
                 android:id="@+id/profile"
                 android:layout_width="35dp"
                 android:layout_height="35dp"
-                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
                 android:layout_centerVertical="true"
                 android:src="@drawable/user" />
 
@@ -62,15 +62,15 @@
                 android:layout_marginStart="25dp"
                 android:background="@drawable/card_4"
                 android:padding="5dp"
-                android:text="Ascending Sort"
+                android:text="@string/ascending_sort"
                 android:textColor="@color/black"
                 android:textStyle="bold" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/sortDescBtn"
-                android:layout_toRightOf="@+id/sortBtn"
+                android:layout_toEndOf="@+id/sortBtn"
                 android:layout_marginStart="50dp"
-                android:text="Descending Sort"
+                android:text="@string/descending_sort"
                 android:layout_width="110dp"
                 android:layout_height="60dp"
                 android:background="@drawable/card_3"
@@ -100,7 +100,7 @@
                         android:layout_height="wrap_content"
                         android:layout_centerHorizontal="true"
                         android:fontFamily="@font/bungee"
-                        android:text="Shoes"
+                        android:text="@string/shoes"
                         android:textColor="@color/black"
                         android:textSize="28sp" />
                 </RelativeLayout>

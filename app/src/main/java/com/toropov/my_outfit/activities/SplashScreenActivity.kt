@@ -71,18 +71,6 @@ class SplashScreenActivity : AppCompatActivity() {
             }, 6110)
         }
 
-//        Handler().postDelayed({
-//            val intent = Intent(this, LoginActivity::class.java)
-//            val pair = listOf<Pair<View, String>>(
-//                Pair<View, String>(logo, "logo_image"),
-//                Pair<View, String>(text, "logo_text"),
-//            )
-//            val options: ActivityOptions = ActivityOptions.makeSceneTransitionAnimation(this,
-//                pair[0],pair[1]
-//            )
-//            startActivity(intent,options.toBundle())
-//            finish()
-//        }, 5500)
     }
 
     public override fun onStart() {

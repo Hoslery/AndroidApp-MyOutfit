@@ -32,7 +32,7 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="0dp"
             android:layout_toEndOf="@+id/item_photo"
-            android:text="Shop"
+            android:text="@string/shop_name"
             android:textAppearance="?attr/textAppearanceHeadline6"
             android:textColor="@color/black"
             android:textSize="20sp" />
@@ -45,7 +45,7 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="10dp"
             android:layout_toEndOf="@+id/item_photo"
-            android:text="Name"
+            android:text="@string/item_name"
             android:textAppearance="?attr/textAppearanceHeadline3"
             android:textColor="@color/black"
             android:textSize="15sp" />
@@ -58,7 +58,7 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="25dp"
             android:layout_toEndOf="@+id/item_photo"
-            android:text="Price"
+            android:text="@string/item_price"
             android:textAppearance="?attr/textAppearanceHeadline3"
             android:textColor="@color/black"
             android:textSize="15sp" />

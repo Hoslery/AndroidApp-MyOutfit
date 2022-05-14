@@ -277,7 +277,7 @@ class DashBoardActivity : AppCompatActivity(), FeaturedAdapter.OnItemClickListen
                 startActivity(Intent(this,FavouritesActivity::class.java))
             }
             R.id.nav_about -> {
-
+                startActivity(Intent(this,AboutUsActivity::class.java))
             }
         }
         drawerLayout.closeDrawer(GravityCompat.START)
@@ -300,7 +300,7 @@ class DashBoardActivity : AppCompatActivity(), FeaturedAdapter.OnItemClickListen
                 startActivity(openLinkIntent)
             }
             "Zara"->{
-                val address: Uri = Uri.parse("https://www.zara.com/ru/")
+                val address: Uri = Uri.parse("https://www.zara.com/us/")
                 val openLinkIntent = Intent(Intent.ACTION_VIEW, address)
                 startActivity(openLinkIntent)
             }

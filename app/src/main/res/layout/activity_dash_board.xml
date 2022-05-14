@@ -44,7 +44,7 @@
                 android:id="@+id/profile"
                 android:layout_width="35dp"
                 android:layout_height="35dp"
-                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
                 android:layout_centerVertical="true"
                 android:src="@drawable/user" />
 
@@ -90,7 +90,7 @@
                             android:layout_centerInParent="true"
                             android:fontFamily="@font/bungee"
                             android:textSize="12sp"
-                            android:text="Application for monitoring clothing prices" />
+                            android:text="@string/appForMonitoring" />
 
 
                     </RelativeLayout>
@@ -131,7 +131,7 @@
                             android:textStyle="bold"
                             android:textAlignment="center"
                             android:gravity="center_horizontal"
-                            android:text="T-Shirts"/>
+                            android:text="@string/t_shirts"/>
 
                     </LinearLayout>
 
@@ -162,7 +162,7 @@
                             android:textStyle="bold"
                             android:textAlignment="center"
                             android:gravity="center_horizontal"
-                            android:text="Dresses"/>
+                            android:text="@string/dresses"/>
 
                     </LinearLayout>
 
@@ -193,7 +193,7 @@
                             android:textStyle="bold"
                             android:textAlignment="center"
                             android:gravity="center_horizontal"
-                            android:text="Jackets"/>
+                            android:text="@string/jackets"/>
 
                     </LinearLayout>
 
@@ -224,7 +224,7 @@
                             android:textStyle="bold"
                             android:textAlignment="center"
                             android:gravity="center_horizontal"
-                            android:text="Shoes"/>
+                            android:text="@string/shoes"/>
 
                     </LinearLayout>
 
@@ -235,7 +235,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
-                    android:layout_marginLeft="20dp"
+                    android:layout_marginStart="20dp"
                     android:background="@color/banner_background_light">
 
 
@@ -253,9 +253,9 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginLeft="10dp"
+                            android:layout_marginStart="10dp"
                             android:layout_marginTop="20dp"
-                            android:text="All\nFeatured\nStores"
+                            android:text="@string/all_featured_stores"
                             android:textAllCaps="true"
                             android:textColor="@color/black"
                             android:textSize="20sp" />
@@ -264,7 +264,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_margin="10dp"
-                            android:text="All the stores that are featured and have the top demand in town!" />
+                            android:text="@string/topDemand" />
 
 
                     </LinearLayout>
@@ -273,7 +273,7 @@
                         android:id="@+id/featured_recycler"
                         android:layout_width="match_parent"
                         android:layout_height="235dp"
-                        android:layout_toRightOf="@+id/featured_back"
+                        android:layout_toEndOf="@+id/featured_back"
                         android:background="@color/home_background" />
 
                 </RelativeLayout>
@@ -284,7 +284,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:layout_marginTop="16dp"
-                    android:layout_marginLeft="20dp">
+                    android:layout_marginStart="20dp">
 
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -294,7 +294,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/bungee"
-                            android:text="Categories"
+                            android:text="@string/categories"
                             android:textColor="@color/black"
                             android:textSize="15sp" />
 
@@ -306,9 +306,9 @@
                             android:layout_centerVertical="true"
                             android:layout_marginEnd="15dp"
                             android:background="#00000000"
-                            android:text="View all"
+                            android:text="@string/view_all"
                             android:textColor="@color/black"
-                            android:textSize="12dp" />
+                            android:textSize="12sp" />
 
 
                     </RelativeLayout>

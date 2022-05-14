@@ -176,9 +176,9 @@ class UserProfileActivity : AppCompatActivity() {
 
     private fun saveIntoSharedPrefs(key: String, value: Boolean){
         val sp: SharedPreferences = getSharedPreferences("saveBtn", MODE_PRIVATE)
-        val edidtor: SharedPreferences.Editor = sp.edit()
-        edidtor.putBoolean(key,value)
-        edidtor.apply()
+        val editor: SharedPreferences.Editor = sp.edit()
+        editor.putBoolean(key,value)
+        editor.apply()
     }
 
     private fun update(key: String): Boolean{

@@ -1,4 +1,6 @@
 <resources>
+
+    <!-- SignUp/Login -->
     <string name="app_name">MyOutfit</string>
     <string name="search_logo">SearchLogo</string>
     <string name="welcome_text">Hello there, Welcome back</string>
@@ -15,20 +17,95 @@
     <string name="full_name">Full Name</string>
     <string name="user_name">Username</string>
     <string name="email">Email</string>
-    <!-- TODO: Remove or change this placeholder text -->
+
+    <!-- Forgot Password -->
+    <string name="forgot_npassword">Forgot\nPassword</string>
+    <string name="provideAcc">Provide your account\'s email for which you want to reset your password!</string>
+    <string name="next">Next</string>
+    <string name="password_nupdated">Password\nUpdated</string>
+    <string name="has_been_updated">Your password has been updated!</string>
+    <string name="login">Login</string>
+
+
+    <!-- Set New Password -->
+    <string name="new_ncredentials">New\nCredentials</string>
+    <string name="identity_verified">Your identity has been verified!\nSet your new password</string>
+    <string name="new_password">New Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="update">Update</string>
+
+
+    <!-- Items -->
+    <string name="ascending_sort">Ascending Sort</string>
+    <string name="descending_sort">Descending Sort</string>
+
+
+    <!-- Fragments -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="home">Home</string>
-    <string name="my_profile">My Profile</string>
+    <string name="skip">Skip</string>
+    <string name="easy">Easy</string>
+    <string name="price_tracking">Price Tracking</string>
+    <string name="track_prices_interested_in">Track prices for the items you are interested in</string>
+    <string name="many">Many</string>
+    <string name="choose_clothes">Choose clothes from a large number of categories</string>
+    <string name="user_friendly">User-friendly</string>
+    <string name="myInterface">Interface</string>
+    <string name="this_interface_is_aimed">This interface is aimed at maximum user convenience</string>
+
+
+
+
+    <!-- Clothes -->
     <string name="clothes">Clothes</string>
     <string name="t_shirts">T-Shirts</string>
     <string name="dresses">Dresses</string>
     <string name="jackets">Jackets</string>
     <string name="shoes">Shoes</string>
-    <string name="favourites">Favourites</string>
-    <string name="about_us">About us</string>
-    <string name="rate_us">Rate us</string>
     <string name="jeans">Jeans</string>
     <string name="hoodies">Hoodies</string>
     <string name="pants">Pants</string>
     <string name="blazers">Blazers</string>
+    <string name="categories">Categories</string>
+    <string name="expand_all">Expand All</string>
+
+    <!-- Menu -->
+    <string name="home">Home</string>
+    <string name="my_profile">My Profile</string>
+    <string name="favourites">Favourites</string>
+    <string name="about_us">About us</string>
+    <string name="rate_us">Rate us</string>
+    <string name="track_easily">Track the prices of things easily</string>
+
+    <!-- DashBoard -->
+    <string name="appForMonitoring">Application for monitoring clothing prices</string>
+    <string name="all_featured_stores">All\nFeatured\nStores</string>
+    <string name="topDemand">All the stores that are featured and have the top demand on the Internet!</string>
+    <string name="view_all">View all</string>
+
+
+    <!-- Profile -->
+    <string name="user_fullName">Egor Toropov</string>
+    <string name="user_username">egor4</string>
+    <string name="gender">Gender</string>
+    <string name="email_profile">Email:</string>
+    <string name="user_email">toporik_75@mail.ru</string>
+    <string name="password_profile">Password:</string>
+    <string name="user_password">Ab123#</string>
+    <string name="exit">Exit</string>
+
+
+    <!-- Item Design -->
+    <string name="shop_name">Shop</string>
+    <string name="item_name">Name</string>
+    <string name="item_price">Price</string>
+
+    <!-- Featured Card Design -->
+    <string name="fashionable_clothes">Fashionable clothes at affordable prices</string>
+
+
+    <!-- Copyright -->
+    <string name="copy_right">Copyright %s MyOutfit. All rights reserved</string>
+
+
+
 </resources>

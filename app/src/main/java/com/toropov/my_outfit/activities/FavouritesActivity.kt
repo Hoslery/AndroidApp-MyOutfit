@@ -66,7 +66,7 @@ class FavouritesActivity : AppCompatActivity(), FavouritesAdapter.OnItemClickLis
                 for(snap in snapshot.children){
                     val imgUrlStr: String? = snap.child("image").getValue(String::class.java)
                     val itemName: String? = snap.child("itemName").getValue(String::class.java)
-                    val itemPrice: String? = snap.child("itemPrice").getValue(String::class.java)
+                    val itemPrice: String = "${snap.child("itemPrice").getValue(Double::class.java).toString()} $"
                     val itemShop: String? = snap.child("itemShop").getValue(String::class.java)
                     val href: String? = snap.child("itemHref").getValue(String::class.java)
                     products.add(FavouriteHelperClass(imgUrlStr,itemShop,itemName,itemPrice,href))
